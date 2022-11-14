@@ -7,12 +7,22 @@
     <title>Title</title>
     <link href="./dist/css/index.css" rel="stylesheet" />
   </head>
-  <body>
-    <header class="container"></header>
-    <main class="container-fluid">
+  <body class="d-flex flex-column vh-100 gap-4">
+    <header class="container-fluid">
+      <div class="container">
+        <nav>
+          <a href="./" class="nav-link">Logo</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container flex-fill">
       <h1>Welcome</h1>
     </main>
-    <footer></footer>
-    <script src="/src/js/index.js" type="module"></script>
+    <footer class="container-fluid">
+      <div class="container">
+        <p>Footer</p>
+      </div>
+    </footer>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
