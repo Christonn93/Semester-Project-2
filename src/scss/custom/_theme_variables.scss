@@ -33,6 +33,6 @@ $theme-colors: (
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 .ac-logo {
-  max-width: 200px;
+  max-width: 250px;
   color: $theme-beige;
 }

@@ -6,25 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
     <link href="./dist/css/index.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/af67014470.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body class="d-flex flex-column vh-100 gap-4">
     <header class="container-fluid bg-theme-blue">
-      <div class="container p-2">
-        <nav>
-          <a href="./" class="nav-link text-white"
-            ><img src="/auction-garage.png" class="ac-logo"
-          /></a>
-        </nav>
-      </div>
+      <nav class="navbar bg-theme-blue fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/auction-garage.png" class="ac-logo" />
+          </a>
+          <button
+            class="navbar-toggler border-theme-beige shadow bg-theme-beige"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header bg-theme-blue">
+              <img src="/auction-garage.png" class="ac-logo" />
+              <button
+                type="button"
+                class="btn-close bg-theme-beige"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body bg-theme-blue d-flex flex-column">
+              <div>
+                <ul class="navbar-nav justify-content-center flex-grow-1">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active text-theme-beige text-center"
+                      aria-current="page"
+                      href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-theme-beige text-center" href="#"
+                      >Listing</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-theme-beige text-center" href="#"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="container mt-auto d-flex gap-3 justify-content-center"
+              >
+                <button class="btn btn-theme-beige">Sign in</button>
+                <button class="btn btn-theme-beige">Sign up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="container flex-fill">
       <h1>Welcome</h1>
     </main>
     <footer class="container-fluid bg-theme-blue">
       <div class="container p-2">
-        <p class="text-white">Footer</p>
+        <h4 class="text-theme-beige text-center">About us</h4>
+      </div>
+      <div class="container-fluid">
+        <div class="ac-footer-text d-flex gap-1 justify-content-center">
+          <i class="fa-solid fa-copyright text-theme-beige p-0 m-0"></i>
+          <p class="text-theme-beige">Copyright Auction Garage 2022</p>
+        </div>
       </div>
     </footer>
     <script src="./index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
