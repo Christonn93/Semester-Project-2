@@ -40,6 +40,12 @@ export class SignIn {
         const profile = new UserProfile(name, avatar, credits, email);
         new Store('Profile', profile);
       }
+
+      // Checking if token is in storage
+      const userToken = localStorage.getItem('token');
+      if (userToken) {
+        window.location.href = './pages/user/dashboard/index.html';
+      }
     } catch {
       // Show user a message that they couldn't log in
     }
