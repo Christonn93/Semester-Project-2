@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies  
         run: npm i
       - name: Build SASS
-        run: npm run build
+        run: npm run build --if-present
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
