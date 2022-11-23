@@ -76,18 +76,20 @@ class SignIn {
 }
 
 const button = document.querySelector('#signInBtn');
-button.addEventListener('click', async (e) => {
-  e.preventDefault();
+if (button) {
+  button.addEventListener('click', async (e) => {
+    e.preventDefault();
 
-  const form = document.querySelector('#signInForm');
-  const email = form.email.value;
-  const password = form.password.value;
-  const user = new SignIn(email, password);
-  await user.authenticate(password);
+    const form = document.querySelector('#signInForm');
+    const email = form.email.value;
+    const password = form.password.value;
+    const user = new SignIn(email, password);
+    await user.authenticate(password);
 
-  // Checking if token is in storage
-  const userToken = localStorage.getItem('Token');
-  if (userToken) {
-    window.location.replace('./pages/user/dashboard/index.html');
-  }
-});
+    // Checking if token is in storage
+    const userToken = localStorage.getItem('Token');
+    if (userToken) {
+      window.location.replace('./pages/user/dashboard/index.html');
+    }
+  });
+}
