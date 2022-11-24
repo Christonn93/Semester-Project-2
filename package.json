@@ -1,6 +1,6 @@
 {
   "name": "project-template",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple template reposetory for feautere projects",
   "main": "index.js",
   "scripts": {
