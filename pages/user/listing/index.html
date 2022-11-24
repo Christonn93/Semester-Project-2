@@ -87,93 +87,67 @@
       <div class="container d-flex flex-column gap-5">
         <h1>Create new listing</h1>
         <form class="d-flex flex-column gap-3" id="newEntryForm">
-          <div class="container">
-            <div class="d-flex gap-2">
-              <div class="form-group was-validated">
-                <label class="form-label text-theme-blue" for="title"
-                  >Title</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="title"
-                  name="title"
-                  required
-                />
-                <div class="invalid-feedback d-none">
-                  Please enter product title
-                </div>
-              </div>
-              <div class="form-group was-validated">
-                <label class="form-label text-theme-blue" for="description"
-                  >Description</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="description"
-                  name="description"
-                  required
-                />
-                <div class="invalid-feedback d-none">
-                  Please enter product description
-                </div>
-              </div>
-            </div>
-            <div class="d-flex gap-2">
-              <div class="form-group was-validated">
-                <label class="form-label text-theme-blue" for="media"
-                  >Product media</label
-                >
-                <input
-                  class="form-control"
-                  type="url"
-                  id="media"
-                  name="media"
-                  required
-                />
-                <div class="invalid-feedback d-none">
-                  Please enter product media
-                </div>
-              </div>
-            </div>
-            <div class="d-flex gap-2">
-              <div class="form-group was-validated">
-                <label class="form-label text-theme-blue" for="tags"
-                  >Tags</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="tags"
-                  name="tags"
-                  required
-                />
-                <div class="invalid-feedback d-none">
-                  Please enter product tags
-                </div>
-              </div>
-              <div class="form-group was-validated">
-                <label class="form-label text-theme-blue" for="endsAt"
-                  >Ends at</label
-                >
-                <input
-                  class="form-control"
-                  type="date"
-                  id="endsAt"
-                  name="endsAt"
-                  required
-                />
-                <div class="invalid-feedback d-none">
-                  Please enter product tags
-                </div>
-              </div>
-            </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              name="title"
+              placeholder="Title"
+            />
+            <div class="invalid-feedback">Please enter a title.</div>
           </div>
-          <div class="container">
-            <button type="submit" id="newEntry" class="btn btn-outline-success">
-              Upload new listing
-            </button>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              name="description"
+              rows="3"
+              placeholder="Description"
+            ></textarea>
+            <div class="invalid-feedback">Please enter a description.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="media" class="form-label">Media</label>
+            <input
+              type="text"
+              class="form-control"
+              id="media"
+              name="media"
+              placeholder="Media"
+            />
+            <div class="invalid-feedback">Please enter valid image url.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="endsAt" class="form-label">End</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="endsAt"
+              name="endsAt"
+            />
+            <div class="invalid-feedback">Please enter valid image url.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tags"
+              name="tags"
+              placeholder="Tags"
+            />
+            <div class="invalid-feedback">Please enter min one tag.</div>
+          </div>
+
+          <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Submit form</button>
           </div>
         </form>
       </div>
