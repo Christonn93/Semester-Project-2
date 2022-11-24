@@ -1,5 +1,4 @@
 const form = document.querySelector('#newEntryForm');
-
 if (form) {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -8,13 +7,12 @@ if (form) {
     const formData = new FormData(form);
     const newData = Object.fromEntries(formData.entries());
     console.log(newData);
-    const { title, description, tags = [], endsAt, media = [] } = newData;
-
+    const { title, description, tags, endsAt, media } = newData;
     // send it to API
-    createNewEntry(newData);
+    createNewEntry(title, description, [media], [tags], endsAt);
   });
 
-  async function createNewEntry(inputData) {
+  async function createNewEntry(title, description, media, tags, endsAt) {
     const token = JSON.parse(localStorage.getItem('Token'));
 
     const options = {
@@ -23,7 +21,7 @@ if (form) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(inputData),
+      body: JSON.stringify({ title, description, media, tags, endsAt }),
     };
 
     try {
