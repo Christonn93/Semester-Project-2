@@ -1,11 +1,8 @@
-const storageToken = localStorage.getItem('Token');
-
-async function getListings(token) {
+async function getListings() {
   const options = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(),
   };
@@ -21,7 +18,7 @@ async function getListings(token) {
   }
 }
 
-const data = await getListings(storageToken);
+const data = await getListings();
 console.log(data);
 
 data.forEach((el) => {
