@@ -6,22 +6,19 @@ switch (routeName) {
   // Homepage UI settings
   case 'homepage':
     // Page title
-    document.querySelector('title').innerText =
-      defaultTitle + ` || ` + `Homepage`;
+    document.querySelector('title').innerText = defaultTitle + ` || ` + `Homepage`;
     break;
 
   // Profile UI settings
   case 'dashboard':
     // Page title
-    document.querySelector('title').innerText =
-      defaultTitle + ` || ` + `Dashboard`;
+    document.querySelector('title').innerText = defaultTitle + ` || ` + `Dashboard`;
     break;
 
   // New entry UI settings
   case 'newEntry':
     // Page title
-    document.querySelector('title').innerText =
-      defaultTitle + ` || ` + `New entry`;
+    document.querySelector('title').innerText = defaultTitle + ` || ` + `New entry`;
     break;
 
   // 404 UI settings
@@ -55,19 +52,10 @@ class SignIn {
     };
 
     try {
-      const req = await fetch(
-        'https://api.noroff.dev/api/v1/auction/auth/login',
-        options
-      );
+      const req = await fetch('https://api.noroff.dev/api/v1/auction/auth/login', options);
       if (req.ok) {
         // Destructuring response object
-        const {
-          name,
-          avatar,
-          credits,
-          email,
-          accessToken: token,
-        } = await req.json();
+        const { name, avatar, credits, email, accessToken: token } = await req.json();
 
         // Store accessToken
         new Store('Token', token);
@@ -100,41 +88,3 @@ if (button) {
     }
   });
 }
-
-async function createNewEntry(title, description, media, tags, endsAt) {
-  const token = JSON.parse(localStorage.getItem('Token'));
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ title, description, media, tags, endsAt }),
-  };
-
-  try {
-    const req = await fetch(
-      'https://api.noroff.dev/api/v1/auction/listings',
-      options
-    );
-    if (req.ok) {
-      return await req.json();
-    }
-  } catch {
-    // Show user a message that they couldn't log in
-  }
-}
-
-const newEntryBtn = document.querySelector('#newEntry');
-newEntryBtn.addEventListener('click', async (e) => {
-  e.preventDefault();
-
-  const form = document.querySelector('#newEntryForm');
-  const formData = new FormData(form);
-
-  // const {title: title, description: description, tags: tags = [], media: media = [], endsAt: endsAt} = formData
-
-  const newData = Object.fromEntries(formData.entries());
-
-  await createNewEntry(newData);
-});

@@ -1,3 +1,10 @@
+/* Header */
+.ac-logo {
+  width: calc(100% - 200px);
+  height: auto;
+}
+
+/* Dashboard */
 .container-sidebar {
   min-width: fit-content !important;
   width: max-content !important;
@@ -12,7 +19,13 @@
   border-radius: 50%;
 }
 
-.ac-logo {
+/* Listing */
+.ac-listing-item {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.ac-listing-img {
   width: calc(100% - 200px);
   height: auto;
 }
