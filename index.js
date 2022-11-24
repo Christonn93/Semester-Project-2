@@ -17,6 +17,13 @@ switch (routeName) {
       defaultTitle + ` || ` + `Dashboard`;
     break;
 
+  // New entry UI settings
+  case 'newEntry':
+    // Page title
+    document.querySelector('title').innerText =
+      defaultTitle + ` || ` + `New entry`;
+    break;
+
   // 404 UI settings
   case '404':
     // Page title
@@ -94,7 +101,7 @@ if (button) {
   });
 }
 
-async function createNewEntry(formData) {
+async function createNewEntry(title, description, media, tags, endsAt) {
   const token = JSON.parse(localStorage.getItem('Token'));
   const options = {
     method: 'POST',
@@ -102,7 +109,7 @@ async function createNewEntry(formData) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(formData),
+    body: JSON.stringify({ title, description, media, tags, endsAt }),
   };
 
   try {
@@ -111,7 +118,7 @@ async function createNewEntry(formData) {
       options
     );
     if (req.ok) {
-      console.log(req);
+      return await req.json();
     }
   } catch {
     // Show user a message that they couldn't log in
