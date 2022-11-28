@@ -8,7 +8,7 @@ async function getListings() {
   };
 
   try {
-    const req = await fetch('https://api.noroff.dev/api/v1/auction/listings', options);
+    const req = await fetch('https://api.noroff.dev/api/v1/auction/listings/?limit=3', options);
     if (req.ok) {
       // Destructuring response object
       return await req.json();
