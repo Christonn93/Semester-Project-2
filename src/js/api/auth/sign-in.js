@@ -1,5 +1,5 @@
 import { Store } from '../../storage/storage';
-import { UserProfile } from './src/js/api/user';
+import { UserProfile } from '../user/userProfile';
 
 export class SignIn {
   constructor(email) {
@@ -19,19 +19,10 @@ export class SignIn {
     };
 
     try {
-      const req = await fetch(
-        'https://api.noroff.dev/api/v1/auction/auth/login',
-        options
-      );
+      const req = await fetch('https://api.noroff.dev/api/v1/auction/auth/login', options);
       if (req.ok) {
         // Destructuring response object
-        const {
-          name,
-          avatar,
-          credits,
-          email,
-          accessToken: token,
-        } = await req.json();
+        const { name, avatar, credits, email, accessToken: token } = await req.json();
 
         // Store accessToken
         new Store('Token', token);
@@ -39,6 +30,13 @@ export class SignIn {
         // Store profile object
         const profile = new UserProfile(name, avatar, credits, email);
         new Store('Profile', profile);
+        new Store('Username', name);
+      }
+
+      // Checking if token is in storage
+      const userToken = localStorage.getItem('token');
+      if (userToken) {
+        window.location.replace('./pages/user/dashboard/index.html');
       }
     } catch {
       // Show user a message that they couldn't log in

@@ -1,0 +1,31 @@
+/* Header */
+.ac-logo {
+  width: calc(100% - 200px);
+  height: auto;
+}
+
+/* Dashboard */
+.container-sidebar {
+  min-width: fit-content !important;
+  width: max-content !important;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.ac-profile-img {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+/* Listing */
+.ac-listing-item {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.ac-listing-img {
+  width: calc(100% - 200px);
+  height: auto;
+}
