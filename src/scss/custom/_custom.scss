@@ -32,6 +32,6 @@
 }
 
 .ac-listing-img {
-  width: calc(100% - 200px);
-  height: auto;
+  width: calc(100% * (9 / 16));
+  aspect-ratio: 1;
 }

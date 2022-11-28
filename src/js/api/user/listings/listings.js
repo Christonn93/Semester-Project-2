@@ -1,3 +1,5 @@
+import * as url from '../../constant';
+
 export async function getListings() {
   const options = {
     method: 'GET',
@@ -8,7 +10,7 @@ export async function getListings() {
   };
 
   try {
-    const req = await fetch('https://api.noroff.dev/api/v1/auction/listings/?_seller=true&_bids=true', options);
+    const req = await fetch(url.api_base_url + url.listingEndPoint, options);
     if (req.ok) {
       // Destructuring response object
 

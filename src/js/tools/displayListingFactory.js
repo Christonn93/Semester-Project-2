@@ -13,26 +13,22 @@
  * @param {*} id Adds post media if it is any
  * @returns the card with the information you want
  */
-export function displayListingFactory(elementName = '', className = '', elementId = '', media, title, description, tags, endsAt, id) {
+export function displayListingFactory(elementName = '', className, elementId = '', media, title, description, tags, endsAt, id) {
   const element = document.createElement(elementName);
   element.classList.add(className);
   element.id = elementId;
-  element.innerHTML = `<div class="card ac-listing-item">
-  <div class="d-flex flex-column justify-content-evenly gap-1">
-  <div>
-  <img src="${media}" class="card-img-top" alt="..." />
+  element.innerHTML = `<div class="card h-100">
+  <img src="${media}" class="card-img-top ac-listing-img" alt="..." loading="lazy" />
+  <div class="card-body d-flex flex-column gap-2">
+  <h3 class="card-title">${title}</h3>
+  <p class="card-text">${description}</p>
+  <div class="d-flex flex-column gap-2">
+  <span>Auction ends: </br>${endsAt}</span>
+  <span>Tags: ${tags}</span>
   </div>
-  <div class="card-body">
-  <h5 class="card-title">${title}</h5>
-  <article class="card-text">${description}</article>
 </div>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">${tags}</li>
-  <li class="list-group-item">${endsAt}</li>
-</ul>
-<div class="card-body mb-0">
-  <a href="../../listings/listing-item/index.html?id=${id}" class="card-link">Card link</a>
-</div>
+<div class="card-footer d-flex justify-content-center">
+<a href="../../listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue">Read more</a>
 </div>
 </div>`;
   return element;

@@ -129,12 +129,12 @@
           </article>
 
           <div class="container d-flex gap-2 flex-column">
-            <div>
-              <h3>Search posts</h3>
-              <input class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" id="postSearch" data-search />
+            <div class="container mb-2">
+              <label for="search">Search listings</label>
+              <input id="search" class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" data-search />
             </div>
             <h3>All listings</h3>
-            <div class="d-flex flex-wrap gap-2" id="listingItems"></div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="listingItems"></div>
           </div>
         </div>
       </div>

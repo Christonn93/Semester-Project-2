@@ -1,5 +1,6 @@
+import * as url from '../../constant';
+
 const storageToken = localStorage.getItem('Token');
-let fetchUrl;
 
 async function getListings(token, id) {
   const options = {
@@ -12,7 +13,7 @@ async function getListings(token, id) {
   };
 
   try {
-    const req = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${id}?_seller=true&_bids=true`, options);
+    const req = await fetch(url.api_base_url + url.listingEndPoint, +`${id}` + url.sellerAndBidsFlags, options);
     if (req.ok) {
       return await req.json();
     }
@@ -21,8 +22,8 @@ async function getListings(token, id) {
   }
 }
 
-const url = new URL(location.href);
-const id = url.searchParams.get('id');
+const urlParams = new URL(location.href);
+const id = urlParams.searchParams.get('id');
 
 const data = await getListings(storageToken, id);
 console.log(data);

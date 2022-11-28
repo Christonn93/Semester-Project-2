@@ -1,3 +1,5 @@
+import  * as url  from "../../constant";
+
 const form = document.querySelector('#newEntryForm');
 if (form) {
   form.addEventListener('submit', (event) => {
@@ -25,7 +27,7 @@ if (form) {
     };
 
     try {
-      const req = await fetch('https://api.noroff.dev/api/v1/auction/listings', options);
+      const req = await fetch(url.api_base_url + url.createNewListingEndPoint, options);
       if (req.ok) {
         return await req.json();
       }
