@@ -1,6 +1,6 @@
-import { Store } from '../../storage/storage';
-import { UserProfile } from './src/js/api/user';
-import * as apiUrl from '../constant';
+import { Store } from '../../storage/storage.js';
+import { UserProfile } from './src/js/api/user.js';
+import * as apiUrl from '../constant.js';
 
 export class SignUp {
   constructor(email) {
@@ -23,13 +23,7 @@ export class SignUp {
       const req = await fetch(apiUrl + 'auction/auth/register', options);
       if (req.ok) {
         // Destructuring response object
-        const {
-          name,
-          avatar,
-          credits,
-          email,
-          accessToken: token,
-        } = await req.json();
+        const { name, avatar, credits, email, accessToken: token } = await req.json();
 
         // Store accessToken
         new Store('Token', token);

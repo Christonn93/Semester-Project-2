@@ -1,4 +1,4 @@
-import { SignIn } from '../api/auth/sign-in';
+import { SignIn } from '../api/auth/sign-in.js';
 
 export function signInUser() {
   const button = document.querySelector('#signInBtn');

@@ -1,5 +1,5 @@
-import { Store } from '../../storage/storage';
-import { UserProfile } from '../user/userProfile';
+import { Store } from '../../storage/storage.js';
+import { UserProfile } from '../user/userProfile.js';
 
 export class SignIn {
   constructor(email) {

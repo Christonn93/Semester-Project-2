@@ -30,7 +30,7 @@ switch (routeName) {
 }
 
 // All this code is just for testing, remove when testing is complete
-import { signInUser } from './src/js/listeners/sign-in';
+import { signInUser } from './src/js/listeners/sign-in.js';
 signInUser();
-import { signOutBtn } from './src/js/api/auth/sign-out';
+import { signOutBtn } from './src/js/api/auth/sign-out.js';
 signOutBtn();

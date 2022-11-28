@@ -1,5 +1,5 @@
-import { getListings } from '../api/user/listings/listings';
-import { displayListingFactory } from '../tools/displayListingFactory';
+import { getListings } from '../api/user/listings/listings.js';
+import { displayListingFactory } from '../tools/displayListingFactory.js';
 const data = await getListings();
 
 export async function displayListingUi() {
