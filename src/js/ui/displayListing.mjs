@@ -18,8 +18,10 @@ export async function displayListingUi() {
           window.location.replace('../../../index.html');
         }
         
-        const userName = JSON.parse(localStorage.getItem('Username'));
-        if (userName == sellerName) {
+        // Filtering response basted on user name
+        const profile = JSON.parse(localStorage.getItem('Profile'));
+        const { Name } = profile
+        if (Name == sellerName) {
           listingItemsList.append(displayListingFactory('div', 'card,ac-listing-item', `listingId=${id}`, media, title, description, tags, endsAt, id));
         }
         break;
