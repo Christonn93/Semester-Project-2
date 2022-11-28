@@ -30,6 +30,7 @@ export class SignIn {
         // Store profile object
         const profile = new UserProfile(name, avatar, credits, email);
         new Store('Profile', profile);
+        new Store('Username', name);
       }
 
       // Checking if token is in storage

@@ -8,11 +8,12 @@ export async function getListings() {
   };
 
   try {
-    const req = await fetch('https://api.noroff.dev/api/v1/auction/listings/?limit=3', options);
+    const req = await fetch('https://api.noroff.dev/api/v1/auction/listings/?_seller=true&_bids=true', options);
     if (req.ok) {
       // Destructuring response object
 
       const data = await req.json();
+      console.log(data);
       return data;
     }
   } catch {
