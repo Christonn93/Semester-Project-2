@@ -1,4 +1,4 @@
-import * as url from '../../constant';
+import * as url from '../../constant.js';
 
 export async function getListings() {
   const options = {

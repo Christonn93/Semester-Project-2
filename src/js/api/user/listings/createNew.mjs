@@ -1,4 +1,4 @@
-import  * as url  from "../../constant";
+import  * as url  from "../../constant.js";
 
 const form = document.querySelector('#newEntryForm');
 if (form) {

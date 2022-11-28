@@ -6,13 +6,17 @@ const data = await getListings();
 const userToken = localStorage.getItem('Token');
 const listingItemsList = document.querySelector('#listingItems');
 
+const dataTags = data.map(e => {
+  return e.tags 
+})
+
 export async function displayListingUi() {
+
   data.forEach((el) => {
     const { title, description, tags: tags = [], media, endsAt, id, updated, created, _count, seller, bids } = el;
     const { name: sellerName } = seller;
 
-  const time = changeTimeFormat(endsAt)
-
+    const time = changeTimeFormat(endsAt)
 
     // Switch for displaying cards
     const routeName = document.body.id;
