@@ -35,7 +35,7 @@ export class SignIn {
 
       // Checking if token is in storage
       const userToken = localStorage.getItem('Token');
-      if (userToken) {
+      if (userToken == true) {
         window.location.replace('/pages/user/dashboard/index.html');
       }
     } catch {
