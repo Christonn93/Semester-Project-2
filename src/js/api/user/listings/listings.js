@@ -13,7 +13,6 @@ export async function getListings() {
       // Destructuring response object
 
       const data = await req.json();
-      console.log(data);
       return data;
     }
   } catch {
