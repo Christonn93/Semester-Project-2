@@ -34,9 +34,9 @@ export class SignIn {
       }
 
       // Checking if token is in storage
-      const userToken = localStorage.getItem('token');
+      const userToken = localStorage.getItem('Token');
       if (userToken) {
-        window.location.replace('./pages/user/dashboard/index.html');
+        window.location.replace('/pages/user/dashboard/index.html');
       }
     } catch {
       // Show user a message that they couldn't log in

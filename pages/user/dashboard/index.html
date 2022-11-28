@@ -14,9 +14,9 @@
 
   <body class="d-flex flex-column flex-fill vh-100 gap-4" id="dashboard">
     <header class="bg-theme-blue">
-      <nav class="navbar bg-theme-blue">
+      <nav class="navbar bg-theme-blue" id="pageNavigation">
         <div class="container">
-          <a class="navbar-brand" href="../../../index.html">
+          <a class="navbar-brand" href="#">
             <img src="../../../src/assets/auction-garage.png" class="ac-logo" />
           </a>
           <button class="navbar-toggler border-theme-beige shadow bg-theme-beige" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -41,7 +41,79 @@
                   </li>
                 </ul>
               </div>
-              <div class="container mt-auto d-flex gap-3 justify-content-center" id="userOptionBtn"></div>
+              <div class="container mt-auto d-flex gap-3 justify-content-center" id="userOptionBtn">
+                <div>
+                  <button class="btn btn-theme-beige" type="button" data-bs-toggle="modal" data-bs-target="#signInModal" data-bs-dismiss="offcanvas" aria-label="Close">Sign in</button>
+                  <button class="btn btn-theme-beige" type="button" data-bs-toggle="modal" data-bs-target="#signUpModal" data-bs-dismiss="offcanvas" aria-label="Close">Sign up</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="userOptionModalContainer">
+          <!-- Modal sign in -->
+          <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signInModalLabel">Sign in</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signInForm">
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="email">Email address</label>
+                      <input class="form-control" type="email" id="email" name="email" pattern="[\w\-.]+@(stud.)?noroff.no" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
+                      <div class="invalid-feedback d-none">Please enter your email address</div>
+                    </div>
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="password">Password</label>
+                      <input class="form-control" name="password" type="password" id="password" placeholder="Password" />
+                      <div class="invalid-feedback d-none">Please enter your password</div>
+                    </div>
+                    <button type="submit" id="signInBtn" class="btn btn-outline-theme-beige">Sign in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal sign up -->
+          <div class="modal fade" id="signUpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signUpModalLabel">Sign up</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue">
+                    <input type="text" id="userName" placeholder="Username" />
+                    <input type="email" id="userEmail" placeholder="E-mail" />
+                    <input type="password" id="userPassword" placeholder="Password" />
+                    <input type="link" id="userAvatar" placeholder="Avatar URL" />
+                    <button type="submit" id="signUpBtn" class="btn btn-outline-theme-beige">Sign up</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal sign out -->
+          <div class="modal fade" id="signOutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signOutModalLabel">Sign in</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signInForm">
+                    <p class="text-theme-beige"><strong>NB!</strong> Your are about to sign out. Are you sure?</p>
+                    <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Sign out</button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
