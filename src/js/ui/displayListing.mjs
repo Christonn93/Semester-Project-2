@@ -1,10 +1,7 @@
 import { getListings } from "../api/user/listings/listings";
-
+const data = await getListings();
 
 export async function displayListingUi() {
-  const data = await getListings();
-  console.log(data);
-
   data.forEach((el) => {
     const { title, description, tags: tags = [], media, endsAt, id, updated, created, _count } = el;
 
