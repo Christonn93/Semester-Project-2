@@ -2,6 +2,8 @@ import { getListings } from '../api/user/listings/listings.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 const data = await getListings();
 
+const userToken = localStorage.getItem("Token")
+
 export async function displayListingUi() {
   data.forEach((el) => {
     const { title, description, tags: tags = [], media, endsAt, id, updated, created, _count, seller, bids } = el;
@@ -16,6 +18,9 @@ export async function displayListingUi() {
         const userName = JSON.parse(localStorage.getItem('Username'))
         if (userName == sellerName) {
           listingItemsList.append(displayListingFactory("div", "card,ac-listing-item", `listingId=${id}`, media, title, description, tags, endsAt, id)) 
+        }
+        if(!userToken){
+          window.location.replace("../../../index.html")
         }
         break;
 

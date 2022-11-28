@@ -11,6 +11,11 @@ export function signInUser() {
       const password = form.password.value;
       const user = new SignIn(email, password);
       await user.authenticate(password);
+
+      const userToken = localStorage.getItem('Token');
+      if (userToken) {
+        window.location.replace('./pages/user/dashboard/index.html');
+      }
     });
   }
 }

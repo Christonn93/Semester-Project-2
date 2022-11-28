@@ -16,7 +16,7 @@
     <header class="bg-theme-blue">
       <nav class="navbar bg-theme-blue" id="pageNavigation">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="../../../index.html">
             <img src="../../../src/assets/auction-garage.png" class="ac-logo" />
           </a>
           <button class="navbar-toggler border-theme-beige shadow bg-theme-beige" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -108,7 +108,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signInForm">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signOutForm">
                     <p class="text-theme-beige"><strong>NB!</strong> Your are about to sign out. Are you sure?</p>
                     <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Sign out</button>
                   </form>
@@ -124,7 +124,7 @@
         <div class="container container-sidebar" id="profileContent"></div>
         <div class="container-fluid container-dashboard-content">
           <div class="container d-flex flex-column gap-3">
-            <div class="container">
+            <div class="container" id="userListing">
               <h3>Your listings</h3>
               <div class="d-flex flex-wrap gap-2" id="listingItems"></div>
             </div>

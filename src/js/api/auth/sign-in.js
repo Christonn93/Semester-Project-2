@@ -32,12 +32,6 @@ export class SignIn {
         new Store('Profile', profile);
         new Store('Username', name);
       }
-
-      // Checking if token is in storage
-      const userToken = localStorage.getItem('Token');
-      if (userToken == true) {
-        window.location.replace('/pages/user/dashboard/index.html');
-      }
     } catch {
       // Show user a message that they couldn't log in
     }
