@@ -1,6 +1,6 @@
 # Semester project
 
-[![Deploy static content to Pages](https://github.com/Christonn93/Semester-Project-2/actions/workflows/static.yml/badge.svg?event=check_suite)](https://github.com/Christonn93/Semester-Project-2/actions/workflows/static.yml)
+[![Deploy to Pages](https://github.com/Christonn93/Semester-Project-2/actions/workflows/static.yml/badge.svg)](https://github.com/Christonn93/Semester-Project-2/actions/workflows/static.yml)
 
 ## Associated links
 
