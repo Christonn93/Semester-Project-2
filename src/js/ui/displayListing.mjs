@@ -3,8 +3,18 @@ import { changeTimeFormat } from '../tools/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 const data = await getListings();
 
+const filteredTags = data.map((e) => {
+  const tags = e.tags 
+  return tags;
+})
+
+// const newTagsObject = {...filteredTags}
+filteredTags.forEach((e) => {
+  const newTagsObject = Object.assign({}, e)
+})
+
 const userToken = localStorage.getItem('Token');
-const listingItemsList = document.querySelector('#listingItems');
+const listingItemsList = document.getElementById('listingItems');
 
 export async function displayListingUi() {
   data.forEach((el) => {
@@ -31,7 +41,7 @@ export async function displayListingUi() {
         break;
 
       case 'homepage':
-        if (tags[0] == 'Car') {
+        if (tags == 'Car') {
           listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
         }
     }
