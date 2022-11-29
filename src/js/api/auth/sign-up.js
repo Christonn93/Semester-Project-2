@@ -1,5 +1,5 @@
 import { Store } from '../../storage/storage.js';
-import { UserProfile } from './src/js/api/user.js';
+import { UserProfile } from '../user/userProfile.js';
 import * as apiUrl from '../constant.js';
 
 export class SignUp {

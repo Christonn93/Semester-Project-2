@@ -1,3 +1,5 @@
+// import * as util from "./src/js/index"
+
 // Default/Fallback page title
 const defaultTitle = 'Auction Garage';
 
