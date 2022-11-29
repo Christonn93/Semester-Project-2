@@ -1,6 +1,6 @@
 import * as url from '../../constant.js';
 
-export async function getListings() {
+export async function getListings(tag) {
   const options = {
     method: 'GET',
     headers: {
@@ -8,9 +8,8 @@ export async function getListings() {
     },
     body: JSON.stringify(),
   };
-
   try {
-    const req = await fetch(url.api_base_url + url.listingEndPoint, options);
+    const req = await fetch(url.api_base_url + url.listingEndPoint + `&tag=${tag}`, options);
     if (req.ok) {
       // Destructuring response object
 

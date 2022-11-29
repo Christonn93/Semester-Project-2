@@ -17,19 +17,23 @@ export function displayListingFactory(elementName = '', className, elementId = '
   const element = document.createElement(elementName);
   element.classList.add(className);
   element.id = elementId;
-  element.innerHTML = `<div class="card h-100">
-  <img src="${media}" class="card-img-top ac-listing-img" alt="..." loading="lazy" />
-  <div class="card-body d-flex flex-column gap-2">
-  <h3 class="card-title">${title}</h3>
-  <p class="card-text">${description}</p>
-  <div class="d-flex flex-column gap-2">
-  <span>Auction ends: </br>${endsAt}</span>
-  <span>Tags: ${tags}</span>
+  element.innerHTML = `<div class="card mb-3 h-100 shadow">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="${media}" class="img-fluid rounded-start" alt="..." loading="lazy">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body mt-3 ac-relative">
+      <h3 class="card-title">${title}</h3>
+      <div>${description}</div>
+		  <span>Tags: ${tags}</span>
+     </div>
+     <div class="d-flex flex-column gap-1 mx-2 justify-content-center">
+     <p class="ac-time align-self-center shadow">Ends: ${endsAt}</p> 
+     <a href="../../listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue text-center">Read more</a>
+     </div>
+    </div>
   </div>
-</div>
-<div class="card-footer d-flex justify-content-center">
-<a href="../../listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue">Read more</a>
-</div>
 </div>`;
   return element;
 }

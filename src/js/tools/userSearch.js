@@ -1,7 +1,9 @@
 import { getListings } from '../api/user/listings/listings.js';
+import { displayListingFactory } from './displayListingFactory.js';
 
-// Retrieving array from fetch
-const data = await getListings();
+// Retrieving array from fetch & adding tag
+const tag = ['car', 'Car'];
+const data = await getListings(tag);
 
 // Selecting html element for use in function
 const searchInput = document.getElementById('search');
@@ -12,10 +14,27 @@ const searchInput = document.getElementById('search');
 export function userSearch() {
   searchInput.addEventListener('input', (e) => {
     const value = e.target.value.toLowerCase();
-    data.forEach((item, i) => {
+    const filteredData = [];
+    data.forEach((item) => {
       let isVisible;
-      isVisible = item.title.toLowerCase().includes(value) || item.description.toLowerCase().includes(value);
-      document.querySelector('#listingItems').children[i].classList.toggle('d-none', !isVisible);
+      if (item.description !== null) {
+        isVisible = item.title.toLowerCase().includes(value) || item.description.toLowerCase().includes(value);
+        if (isVisible) {
+          filteredData.push(item);
+        }
+      } else {
+        isVisible = item.title.toLowerCase().includes(value);
+        if (isVisible) {
+          filteredData.push(item);
+        }
+      }
+    });
+
+    console.log(filteredData);
+    filteredData.forEach((e) => {
+      const { media, title, description, tags, time, id } = e;
+      const listingItems = document.getElementById('listingItems');
+      listingItems.appendChild(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
     });
   });
 }
