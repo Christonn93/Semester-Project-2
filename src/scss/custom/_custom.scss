@@ -13,8 +13,7 @@
 /* Dashboard */
 .container-sidebar {
   min-width: fit-content !important;
-  width: 100px;
-  max-width: max-content !important;
+  width: max-content !important;
 }
 
 .list-item {
@@ -22,13 +21,7 @@
 }
 
 .ac-profile-img {
-  max-width: 100px;
-}
-
-.ag-absolute.avatar-gear {
-  top: 0;
-  left: 0;
-  z-index: 99;
+  max-width: 150px;
 }
 
 /* Listing */
@@ -39,6 +32,10 @@
 
 .ac-listing-img {
   aspect-ratio: 1;
+}
+
+.ac-relative {
+  position: relative;
 }
 
 .ac-time {
@@ -66,14 +63,4 @@
   margin: 0 auto;
   font-weight: 700;
   margin-bottom: 10px;
-}
-
-/* Position */
-.ag-absolute {
-  position: absolute;
-}
-
-.ag-relative,
-.ac-relative {
-  position: relative;
 }
