@@ -26,13 +26,18 @@ export function displayListingFactory(elementName = '', className, elementId = '
     <div class="card-body">
     <h3 class="card-title">${title}</h3>
     </div>
-      <div class="card-body ac-relative">
+      <div class="card-body ag-relative">
       <div>${description}</div>
 		  <span>Tags: ${tags}</span>
      </div>
      <div class="d-flex flex-column gap-1 mx-2 justify-content-center">
-     <span class="ac-time shadow d-inline-flex justify-content-center align-items-center gap-2"><i class="fa-solid fa-clock"></i> ${endsAt}</span> 
+     <span class="ag-time shadow d-inline-flex justify-content-center align-items-center gap-2"><i class="fa-solid fa-clock"></i> ${endsAt}</span>
+     <div class="d-flex gap-2 justify-content-end">
+     <form class="d-flex justify-content-end">
+     <button type="button" class="btn btn-success">Place bid</Button>
+     </form> 
      <a href="../../listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue text-center">Read more</a>
+     </div>
      </div>
     </div>
   </div>

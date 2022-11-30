@@ -18,7 +18,7 @@ if (storageToken) {
   const user = document.querySelector('#profileContent');
   if (user) {
     user.innerHTML = `<div class="card p-2">
-    <img src="${imageUrl}" class="ac-profile-img shadow" />
+    <img src="${imageUrl}" class="ag-profile-img shadow" />
     <div class="card-body">
       <ul class="list-group d-flex flex-column gap-2">
         <li class="list-item" id="userName"><p>${username}</p></li>

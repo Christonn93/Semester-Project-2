@@ -1,11 +1,11 @@
 /* Header */
-.ac-logo {
+.ag-logo {
   width: calc(100% - 200px);
   height: auto;
 }
 
-@media screen and (max-width: 500px) {
-  .ac-logo {
+@media screen and (max-width: 800px) {
+  .ag-logo {
     width: 200px;
   }
 }
@@ -21,7 +21,7 @@
   list-style: none;
 }
 
-.ac-profile-img {
+.ag-profile-img {
   max-width: 100px;
 }
 
@@ -32,16 +32,16 @@
 }
 
 /* Listing */
-.ac-listing-item {
+.ag-listing-item {
   max-width: 18rem;
   width: 100%;
 }
 
-.ac-listing-img {
+.ag-listing-img {
   aspect-ratio: 1;
 }
 
-.ac-time {
+.ag-time {
   position: absolute;
   display: flex;
   overflow: auto;
@@ -73,7 +73,6 @@
   position: absolute;
 }
 
-.ag-relative,
-.ac-relative {
+.ag-relative {
   position: relative;
 }
