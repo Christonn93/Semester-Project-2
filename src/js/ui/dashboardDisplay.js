@@ -7,33 +7,19 @@ export function displayProfileInformation() {
 
     const user = document.querySelector('#profileContent');
     if (user) {
-      // Setting src for user avatar image
-      const userAvatar = document.getElementById('userAvatar');
-      if (userAvatar) {
-        const createImageElement = document.createElement('img');
-        createImageElement.src = imageUrl;
-        createImageElement.classList.add('shadow');
-        createImageElement.classList.add('ag-relative');
-        userAvatar.append(createImageElement);
-      } else {
-        console.log('Error!!!');
-      }
-
-      // Displaying user name
-      const displayUserName = document.getElementById('userName');
-      if (displayUserName) {
-        displayUserName.innerText = username;
-      } else {
-        console.log('Error!!!');
-      }
-
-      // Displaying userCredits
-      const userCredits = document.getElementById('userCredits');
-      if (userCredits) {
-        userCredits.innerHTML = `<p><i class="fa-solid fa-coins"></i> ${credits}</p>`;
-      } else {
-        console.log('Error!!!');
-      }
+      user.innerHTML = `<div class="card p-2">
+      <div id="userImage">
+      <img src="${imageUrl}" class="ac-profile-img shadow" alt="Profile picture" />
+      </div>
+      <div class="card-body d-flex flex-column g-2">
+      <h4 id="userName">${username}</h4>
+        <ul class="list-group d-flex flex-column gap-2">
+          <li class="list-item" id="userCredits"><p><i class="fa-solid fa-coins"></i>  ${credits}</p></li>
+          <li class="list-item"><hr class="sidebar-divider" /></li>
+          <li class="list-item"><a href="./new-listing/index.html" class="nav-link">Create listing</a></li>
+        </ul>
+      </div>
+      </div>`;
     }
   }
 }
