@@ -4,3 +4,4 @@
 /src/js/api/user/listings/createNew.js
 /src/js/ui/displayListing.js
 /src/js/tools/userSearch.js
+/src/js/listeners/place-bid.js

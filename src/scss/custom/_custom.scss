@@ -68,6 +68,16 @@
   margin-bottom: 10px;
 }
 
+/* Single listing page */
+#itemSeller > img {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.ag-carousel {
+  aspect-ratio: 1;
+}
+
 /* Position */
 .ag-absolute {
   position: absolute;

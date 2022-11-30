@@ -52,7 +52,101 @@
     </header>
     <main class="container-fluid d-flex flex-fill">
       <div class="container d-flex flex-column gap-5" id="listingDetails">
-        <h1>Hello</h1>
+        <div class="container mt-5">
+          <div class="row row-cols-lg-2 row-cols-sm-1 row-cols-md-1 g-3 mb-2">
+            <div class="container">
+              <div class="ag-image-gallery d-flex flex-column align-content-center gap-2">
+                <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                  <div class="carousel-inner" id="imageCarousel"></div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="container mb-2">
+                <h1 id="title"></h1>
+                <span class="row row-cols-2" id="itemSeller"></span>
+              </div>
+              <div class="container mb-2" id="description"></div>
+              <div class="container mb-2">
+                <form class="d-flex gap-2" id="placeBidForm">
+                  <input type="text" class="form-control-sm w-25" required />
+                  <button type="button" class="btn btn-success">Place bid</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-lg-1 row-cols-sm-1 row-cols-md-1">
+            <div class="container">
+              <div class="container d-flex justify-content-center mb-2">
+                <span class="d-inline-flex gap-2" id="timeLeft"></span>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="container">
+                    <div class="row row-cols-3">
+                      <p>Username</p>
+                      <p>Time bid placed</p>
+                      <p class="text-end">Bid amount</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="container-fluid bg-theme-blue">
@@ -70,7 +164,7 @@
       </div>
     </footer>
     <script src="../../../../index.js" type="module"></script>
-    <script src="../../../src/js/api/user/listings/listItemDetail.js" type="module"></script>
+    <script src="../../../src/js/ui/index.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

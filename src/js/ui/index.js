@@ -2,10 +2,13 @@
 // export * from './displayListing';
 // export * from './supporter';
 // export * from './userOptionBtn';
+export * from './singleEntry';
 
 import { displayListingUi } from './displayListing.js';
 import { displayProfileInformation } from './dashboardDisplay.js';
 import { displayLoggedInButtons } from './userOptionBtn.js';
+import { displaySingleEntryData } from './singleEntry';
 displayListingUi();
 displayProfileInformation();
 displayLoggedInButtons();
+displaySingleEntryData();
