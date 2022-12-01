@@ -1,4 +1,4 @@
-import * as f from '/src/js/index';
+import * as f from './src/js/index';
 
 f.signInUser();
 f.signOutBtn();
