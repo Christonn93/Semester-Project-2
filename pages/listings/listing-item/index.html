@@ -31,13 +31,13 @@
               <div>
                 <ul class="navbar-nav justify-content-center flex-grow-1">
                   <li class="nav-item">
-                    <a class="nav-link active text-theme-beige text-center" href="../dashboard/index.html">Home</a>
+                    <a class="nav-link active text-theme-beige text-center" aria-current="page" href="/index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-theme-beige text-center" href="#">Listing</a>
+                    <a class="nav-link text-theme-beige text-center" href="/pages/listings/index.html">Listing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-theme-beige text-center" href="#">Contact</a>
+                    <a class="nav-link text-theme-beige text-center" href="/pages/about/contact/index.html">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -241,16 +241,23 @@
       </div>
     </main>
     <footer class="container-fluid bg-theme-blue">
-      <div class="container p-2">
-        <h4 class="text-theme-beige text-center">About us</h4>
-      </div>
-      <hr class="sidebar-divider" />
-      <div class="container-fluid">
-        <div class="ac-footer-text d-flex gap-1 justify-content-center">
-          <p class="text-theme-beige">
+      <div class="d-flex flex-column justify-content-center gap-4 mt-5 mb-5">
+        <div class="container-fluid d-flex justify-content-center p-2">
+          <h4 class="text-theme-beige text-center"><a href="/pages/about/index.html" class="nav-link text-theme-beige">About us</a></h4>
+        </div>
+        <div class="container-fluid d-flex align-items-center flex-column p-2" id="ag-supporter">
+          <h3 class="text-theme-beige">Our backend service</h3>
+          <p class="text-theme-beige">This page is using an API delivered by Noroff.</p>
+          <div class="dropdown">
+            <button class="btn btn-theme-beige dropdown-toggle" type="button" id="otherAuctionHouses" data-bs-toggle="dropdown" aria-expanded="false">Other Auction houses</button>
+            <ul class="dropdown-menu" aria-labelledby="otherAuctionHouses" id="otherAuctionHousesList"></ul>
+          </div>
+        </div>
+        <div class="container-fluid d-flex justify-content-center p-2">
+          <div class="ac-footer-text d-flex gap-1 justify-content-center">
             <i class="fa-solid fa-copyright text-theme-beige p-0 m-0"></i>
-            Copyright Auction Garage 2022
-          </p>
+            <p class="text-theme-beige">Copyright Auction Garage 2022</p>
+          </div>
         </div>
       </div>
     </footer>

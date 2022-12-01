@@ -31,13 +31,13 @@
               <div>
                 <ul class="navbar-nav justify-content-center flex-grow-1">
                   <li class="nav-item">
-                    <a class="nav-link active text-theme-beige text-center" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-theme-beige text-center" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-theme-beige text-center" href="#">Listing</a>
+                    <a class="nav-link text-theme-beige text-center" href="/pages/listings/index.html">Listing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-theme-beige text-center" href="#">Contact</a>
+                    <a class="nav-link text-theme-beige text-center" href="/pages/about/contact/index.html">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -143,26 +143,31 @@
     </header>
     <main class="container-fluid d-flex flex-fill">
       <div class="container" id="mainContainer">
-        <h1 class="text-theme-blue">Welcome</h1>
+        <div class="container bg-theme-beige p-2 card mb-3">
+          <article class="container">
+            <h1 class="text-theme-blue"><strong>Welcome</strong></h1>
+            <p class="mb-3"><strong>Auction garage</strong> is a open auction marked, where you can sell and buy items. Our main sell items is cars, but we also have a wide range of tools, parts and accessories.</p>
+            <p>Create a user to begin selling. As a sign up bonus you will receive 1000 <i class="fa-solid fa-coins"></i> (credits) that you can use in any way your heart desire</p>
+          </article>
 
-        <article>
-          <p><strong></strong></p>
-        </article>
-
-        <div class="container d-flex gap-2 flex-column">
-          <div class="container mb-2">
-            <label for="search">Search listings</label>
+          <div class="container mb-2 mt-2">
+            <label for="search"><strong>Search listings</strong></label>
             <input id="search" class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" data-search />
           </div>
-          <h3>All listings</h3>
-          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3" id="listingItems"></div>
+        </div>
+
+        <div class="container d-flex gap-2 flex-column">
+          <div class="container">
+            <h1>Listings</h1>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-4 mt-2" id="listingItems"></div>
+          </div>
         </div>
       </div>
     </main>
     <footer class="container-fluid bg-theme-blue">
       <div class="d-flex flex-column justify-content-center gap-4 mt-5 mb-5">
         <div class="container-fluid d-flex justify-content-center p-2">
-          <h4 class="text-theme-beige text-center"><a href="./pages/about/index.html" class="nav-link text-theme-beige">About us</a></h4>
+          <h4 class="text-theme-beige text-center"><a href="/pages/about/index.html" class="nav-link text-theme-beige">About us</a></h4>
         </div>
         <div class="container-fluid d-flex align-items-center flex-column p-2" id="ag-supporter">
           <h3 class="text-theme-beige">Our backend service</h3>
