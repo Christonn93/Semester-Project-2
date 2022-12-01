@@ -14,7 +14,7 @@ export function signInUser() {
 
       const userToken = localStorage.getItem('Token');
       if (userToken) {
-        window.location.replace('./pages/user/dashboard/index.html');
+        window.location.replace('/pages/user/dashboard/index.html');
       }
     });
   }
