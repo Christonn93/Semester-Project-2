@@ -1,4 +1,4 @@
-import { createNewEntry } from '../api/user/listings/createNew';
+import { createNewEntry } from '../api/user/listings/createNew.js';
 
 const form = document.querySelector('#newEntryForm');
 if (form) {

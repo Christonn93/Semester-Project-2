@@ -1,4 +1,4 @@
-import { displayProfileInformation } from '../ui/dashboardDisplay';
-import { UserProfile } from '../api/user/userProfile';
+import { displayProfileInformation } from '../ui/dashboardDisplay.js';
+import { UserProfile } from '../api/user/userProfile.js';
 
 export const displayUserDetails = new UserProfile(displayProfileInformation);

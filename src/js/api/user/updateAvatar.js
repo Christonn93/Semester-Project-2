@@ -1,4 +1,4 @@
-import { api_base_url } from '../constant';
+import { api_base_url } from '../constant.js';
 
 export async function updateUserAvatar(body) {
   const token = JSON.parse(localStorage.getItem('Token'));

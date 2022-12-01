@@ -1,4 +1,4 @@
-import { getListings } from '../api/user/listings/listItemDetail';
+import { getListings } from '../api/user/listings/listItemDetail.js';
 
 const storageToken = localStorage.getItem('Token');
 const urlParams = new URL(location.href);

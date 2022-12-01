@@ -1,4 +1,4 @@
-import { displayFactory, linkFactory, imageFactory } from '../tools/functionFactory';
+import { displayFactory, linkFactory, imageFactory } from '../tools/functionFactory.js';
 export function displayProfileInformation() {
   const storageToken = localStorage.getItem('Token');
 
