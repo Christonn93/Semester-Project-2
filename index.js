@@ -7,5 +7,6 @@ f.displayListingUi();
 f.displayProfileInformation();
 f.displayLoggedInButtons();
 f.displaySingleEntryData();
+f.routerSwitch();
 
 // All this code is just for testing, remove when testing is complete
