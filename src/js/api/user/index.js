@@ -1,2 +1,2 @@
-export * from './updateAvatar';
-export * from './userProfile';
+export * from './updateAvatar.js';
+export * from './userProfile.js';

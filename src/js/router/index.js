@@ -1,1 +1,1 @@
-export * from './routerSwitch';
+export * from './routerSwitch.js';
