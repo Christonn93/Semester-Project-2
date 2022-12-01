@@ -29,4 +29,3 @@ export function serviceProvider() {
     unorderedListContainer.append(listItems);
   });
 }
-serviceProvider();

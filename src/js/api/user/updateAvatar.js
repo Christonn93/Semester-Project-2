@@ -1,4 +1,4 @@
-import { apiUrl } from '../constant';
+import { api_base_url } from '../constant';
 
 export async function updateUserAvatar(body) {
   const token = JSON.parse(localStorage.getItem('Token'));
@@ -15,7 +15,7 @@ export async function updateUserAvatar(body) {
   };
 
   try {
-    const req = await fetch(apiUrl + `auction/profiles/${userName}/media`, options);
+    const req = await fetch(api_base_url + `auction/profiles/${userName}/media`, options);
     if (req.ok) {
       window.location.reload();
     }

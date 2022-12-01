@@ -31,3 +31,8 @@ $theme-colors: (
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+.custom-tooltip {
+  $tooltip-color: $theme-blue !important;
+  $tooltip-bg: $theme-beige !important;
+}

@@ -14,7 +14,7 @@ export async function getListings(tag) {
       // Destructuring response object
 
       const data = await req.json();
-      console.log('From listings.js', data);
+      // console.log('From listings.js', data);
       return data;
     }
   } catch {
