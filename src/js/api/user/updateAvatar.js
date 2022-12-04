@@ -11,8 +11,10 @@ export async function updateUserAvatar(body) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify({ body }),
   };
+
+  console.log(userName);
 
   try {
     const req = await fetch(api_base_url + `auction/profiles/${userName}/media`, options);

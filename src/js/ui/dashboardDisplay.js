@@ -38,7 +38,7 @@ export function displayProfileInformation() {
              <form class="d-flex flex-column gap-2 p-2 needs-validation" id="userAvatarUpdate">
                <div class="form-group needs-validation">
                  <label class="form-label text-theme-beige" for="userAvatarInput">User avatar URL</label>
-                 <input class="form-control" type="link" id="userAvatarInput" name="userAvatarInput" pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)"/>
+                 <input class="form-control" type="link" id="userAvatarInput" name="userAvatarInput" />
                  <div class="invalid-feedback d-none">Please enter a valid URL</div>
                </div>
                <div class="form-group">

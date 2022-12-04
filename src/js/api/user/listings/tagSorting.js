@@ -3,8 +3,7 @@ import { getListings } from './listings';
 export const tagSorting = async () => {
   const data = await getListings();
   data.forEach((items) => {
-    const tags = items.tags;
-    // console.log(tags)
+    let { title, description, tags: tags = [], media: media = [], endsAt, id, updated, created, _count, seller, bids } = items;
   });
 };
 
