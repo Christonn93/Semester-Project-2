@@ -22,19 +22,16 @@ export async function displayListingUi() {
   const listingItemsList = document.getElementById('listingItems');
 
   data.forEach((el) => {
-    const { title, description, tags: tags = [], media, endsAt, id, updated, created, _count, seller, bids } = el;
-    const { name: sellerName } = seller;
+    let { title, description, tags: tags = [], media: media = [], endsAt, id, updated, created, _count, seller, bids } = el;
+    let { name: sellerName } = seller;
 
-    console.log(el);
-
-    // const tagsObj = {};
-
-    // tags.forEach((el, i) => {
-    //   tagsObj[`tag-${i}`] = el;
-    // });
-
-    // console.log("TagsObj:", tagsObj);
-    // console.log("TagsArray:", tagsObj);
+    if (media.length === 0) {
+      media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
+    } else if (el.status == 403) {
+      media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
+    } else {
+      media = media[0];
+    }
 
     const time = changeTimeFormat(endsAt);
 
@@ -56,8 +53,9 @@ export async function displayListingUi() {
         break;
 
       case 'homepage':
+        listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
         if (tags == 'Car') {
-          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
+          console.log(tags);
         }
     }
   });
