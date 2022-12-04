@@ -2,18 +2,21 @@ import { getListings } from '../api/user/listings/listings.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 
+import { tagSorting } from '../api/user/listings/tagSorting.js';
+tagSorting();
+
 export async function displayListingUi() {
   const data = await getListings();
 
-  const filteredTags = data.map((e) => {
-    const tags = e.tags;
-    return tags;
-  });
+  // const filteredTags = data.map((e) => {
+  //   const tags = e.tags;
+  //   return tags;
+  // });
 
-  // const newTagsObject = {...filteredTags}
-  filteredTags.forEach((e) => {
-    const newTagsObject = Object.assign({}, e);
-  });
+  // // const newTagsObject = {...filteredTags}
+  // filteredTags.forEach((e) => {
+  //   const newTagsObject = Object.assign({}, e);
+  // });
 
   const userToken = localStorage.getItem('Token');
   const listingItemsList = document.getElementById('listingItems');
@@ -21,6 +24,17 @@ export async function displayListingUi() {
   data.forEach((el) => {
     const { title, description, tags: tags = [], media, endsAt, id, updated, created, _count, seller, bids } = el;
     const { name: sellerName } = seller;
+
+    console.log(el);
+
+    // const tagsObj = {};
+
+    // tags.forEach((el, i) => {
+    //   tagsObj[`tag-${i}`] = el;
+    // });
+
+    // console.log("TagsObj:", tagsObj);
+    // console.log("TagsArray:", tagsObj);
 
     const time = changeTimeFormat(endsAt);
 

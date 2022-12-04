@@ -15,6 +15,7 @@ export async function createNewEntry(title, description, media, tags, endsAt) {
   try {
     const req = await fetch(url.api_base_url + url.createNewListingEndPoint, options);
     if (req.ok) {
+      console.log(req.json());
       return await req.json();
     }
   } catch {

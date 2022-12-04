@@ -10,6 +10,7 @@ if (form) {
     const newData = Object.fromEntries(formData.entries());
     console.log(newData);
     const { title, description, tags, endsAt, media } = newData;
+    // debugger;
     // send it to API
     await createNewEntry(title, description, [media], [tags], endsAt);
     window.location.replace('../');

@@ -9,7 +9,7 @@ export async function getListings(tag) {
     body: JSON.stringify(),
   };
   try {
-    const req = await fetch(url.api_base_url + url.listingEndPoint + `&tag=${tag}`, options);
+    const req = await fetch(url.api_base_url + url.listingEndPoint, options);
     if (req.ok) {
       // Destructuring response object
 

@@ -6,3 +6,5 @@
 /src/js/tools/userSearch.js
 /src/js/listeners/place-bid.js
 /src/js/ui/dashboardDisplay.js
+/src/js/api/user/listings/listings.js
+/src/js/api/user/listings/tagSorting.js
