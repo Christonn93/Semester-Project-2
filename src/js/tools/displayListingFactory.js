@@ -33,7 +33,7 @@ export function displayListingFactory(elementName = '', className, elementId = '
      <div class="d-flex flex-column gap-1 mx-2 justify-content-center">
      <span class="ag-time shadow d-inline-flex justify-content-center align-items-center gap-2"><i class="fa-solid fa-clock"></i> ${endsAt}</span>
      <div class="d-flex gap-2 justify-content-end">
-     <a href="./pages/listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue text-center">Read more</a>
+     <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-outline-theme-blue text-center">Read more</a>
      </div>
      </div>
     </div>
