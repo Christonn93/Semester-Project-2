@@ -8,5 +8,7 @@ f.displayProfileInformation();
 f.displayLoggedInButtons();
 f.displaySingleEntryData();
 f.routerSwitch();
+f.signUpUser();
+f.userAvatarUpdate();
 
 // All this code is just for testing, remove when testing is complete

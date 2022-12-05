@@ -12,7 +12,8 @@ export async function registerUser(name, email, password, avatar) {
   };
 
   try {
-    const req = await fetch(apiUrl + 'auction/auth/register', options);
+    const req = await fetch(apiUrl.api_base_url + 'auction/auth/register', options);
+    console.log(req);
     if (req.ok) {
       // Destructuring response object
       const { name, avatar, credits, email, accessToken: token } = await req.json();
