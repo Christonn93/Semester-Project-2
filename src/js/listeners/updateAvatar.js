@@ -1,4 +1,4 @@
-// import { updateUserAvatar } from '../api/user/updateAvatar';
+// import { updateUserAvatar } from '../api/user/updateAvatar.js';
 
 export function userAvatarUpdate() {
   const updateForm = document.querySelector('#userAvatarUpdate');

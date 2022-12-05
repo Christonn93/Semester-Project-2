@@ -1,4 +1,4 @@
 export * from './createNew.js';
 export * from './listItemDetail.js';
 export * from './listings.js';
-export * from './updateEntry';
+export * from './updateEntry.js';
