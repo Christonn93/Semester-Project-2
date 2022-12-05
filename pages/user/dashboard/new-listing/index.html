@@ -147,13 +147,13 @@
         <form class="d-flex flex-column gap-3" id="newEntryForm">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Title" />
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title" minlength="10" maxlength="280" required />
             <div class="invalid-feedback">Please enter a title.</div>
           </div>
 
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Description"></textarea>
+            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Description" minlength="10" required></textarea>
             <div class="invalid-feedback">Please enter a description.</div>
           </div>
 
@@ -166,7 +166,7 @@
           <div class="mb-3">
             <label for="endsAt" class="form-label">End</label>
             <input type="datetime-local" class="form-control" id="endsAt" name="endsAt" />
-            <div class="invalid-feedback">Please enter valid image url.</div>
+            <div class="invalid-feedback">Please enter valid time and date</div>
           </div>
 
           <div class="mb-3">

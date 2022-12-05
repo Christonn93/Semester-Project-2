@@ -16,10 +16,7 @@ export async function registerUser(name, email, password, avatar) {
     console.log(req);
     if (req.ok) {
       // Destructuring response object
-      const { name, avatar, credits, email, accessToken: token } = await req.json();
-
-      // Store accessToken
-      new Store('Token', token);
+      const { name, avatar, credits, email } = await req.json();
 
       // Store profile object
       const profile = new UserProfile(name, avatar, credits, email);

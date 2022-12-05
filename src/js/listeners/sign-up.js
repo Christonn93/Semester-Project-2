@@ -1,4 +1,5 @@
 import { registerUser } from '../api/auth/sign-up.js';
+import { SignIn } from '../api/auth/sign-in.js';
 
 export function signUpUser() {
   const form = document.querySelector('#signUpForm');
@@ -20,10 +21,8 @@ export function signUpUser() {
       if (avatar.length == 0) {
         userRegistration = await registerUser(userName, email, password, avatar);
         if (userRegistration.ok) {
-          const userToken = localStorage.getItem('Token');
-          if (userToken) {
-            window.location.replace('/pages/user/dashboard/index.html');
-          }
+          const user = new SignIn(email, password);
+          await user.authenticate(password);
         }
       }
     });

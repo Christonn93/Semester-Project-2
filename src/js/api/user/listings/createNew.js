@@ -14,7 +14,12 @@ export async function createNewEntry(title, description, media, tags, endsAt) {
   };
 
   try {
-    await fetch(url.api_base_url + url.createNewListingEndPoint, options);
+    const req = await fetch(url.api_base_url + url.createNewListingEndPoint, options);
+    if (!req.ok) {
+      uiMessage('error', 'Sorry, we could not proceed with your request. Try again later');
+    } else {
+      return;
+    }
   } catch {
     uiMessage('error', 'Sorry, we could not proceed with your request. Try again later');
   }
