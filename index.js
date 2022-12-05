@@ -10,5 +10,6 @@ f.displaySingleEntryData();
 f.routerSwitch();
 f.signUpUser();
 f.userAvatarUpdate();
+f.addBidListener();
 
 // All this code is just for testing, remove when testing is complete
