@@ -19,7 +19,10 @@ export async function updateUserAvatar(body) {
   try {
     const req = await fetch(api_base_url + `auction/profiles/${userName}/media`, options);
     if (req.ok) {
-      window.location.reload();
+      alert('Error!!');
+      console.log(userName);
+    } else {
+      // window.location.reload();
     }
   } catch {
     // Show user a message that they couldn't log in

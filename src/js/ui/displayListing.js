@@ -53,9 +53,11 @@ export async function displayListingUi() {
         break;
 
       case 'homepage':
-        listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
-        if (tags == 'Car') {
-          console.log(tags);
+        if (tags !== 'Car') {
+          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
+          // console.log("error")
+        } else {
+          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
         }
     }
   });

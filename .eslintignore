@@ -8,3 +8,5 @@
 /src/js/ui/dashboardDisplay.js
 /src/js/api/user/listings/listings.js
 /src/js/api/user/listings/tagSorting.js
+/src/js/api/user/listings/updateAvatar.js
+/src/js/listeners/newEntry.js

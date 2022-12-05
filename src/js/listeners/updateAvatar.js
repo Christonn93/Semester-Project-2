@@ -1,4 +1,4 @@
-import { updateUserAvatar } from '../api/user/updateAvatar';
+// import { updateUserAvatar } from '../api/user/updateAvatar';
 
 export function userAvatarUpdate() {
   const updateForm = document.querySelector('#userAvatarUpdate');
@@ -7,11 +7,12 @@ export function userAvatarUpdate() {
     e.preventDefault();
 
     const form = e.target;
-    const formInput = form.userAvatarInput.value;
+    const data = new FormData(form);
+    const avatarUrl = data.get('userAvatarInput');
 
-    if (formInput) {
-      console.log(formInput);
-      updateUserAvatar(formInput);
+    if (avatarUrl) {
+      console.log(avatarUrl);
+      // updateUserAvatar(formInput);
     }
   });
 }

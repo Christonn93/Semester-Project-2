@@ -1,10 +1,18 @@
-import { getListings } from './listings';
+import { getListings } from './listings.js';
+import { filterArray } from '../../../tools/filterFunction.js';
 
 export const tagSorting = async () => {
   const data = await getListings();
-  data.forEach((items) => {
-    let { title, description, tags: tags = [], media: media = [], endsAt, id, updated, created, _count, seller, bids } = items;
-  });
+
+  for (let i = 0; i < data.length; i++) {
+    const tags = data[i].tags;
+    const tagsObject = { ...tags };
+    const tagsArray = [tagsObject];
+    //   console.log(tagsArray)
+  }
+
+  let { title, description, tags: tags = [], media: media = [], endsAt, id, updated, created, _count, seller, bids } = data;
+  data.forEach((items) => {});
 };
 
 /*
