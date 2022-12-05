@@ -20,12 +20,10 @@ export function displayListingFactory(elementName = '', className, elementId = '
   element.innerHTML = `<div class="card mb-1 h-100 shadow bg-theme-beige">
   <div class="row g-0">
     <div class="col-md-4 d-flex justify-content-center">
-      <img src="${media}" class="img-fluid h-85" alt="..." loading="lazy">
+      <img src="${media}" class="ag-listing-img" alt="..." loading="lazy">
     </div>
     <div class="col-md-8 d-flex flex-column">
-    <div class="card-body">
-    <h3 class="card-title">${title}</h3>
-    </div>
+    <h3 class="card-title ms-3">${title}</h3>
       <div class="card-body ag-relative">
       <div>${description}</div>
 		  <span>Tags: ${tags}</span>
