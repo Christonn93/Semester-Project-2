@@ -27,7 +27,7 @@ export function displayListingFactory(elementName = '', className = [], elementI
       </div>
     </div>
     <div class="col d-flex flex-column">
-    <h3 class="card-title ms-3">${title}</h3>
+    <h2 class="card-title ms-3">${title}</h2>
       <div class="card-body ag-relative">
       <div>${description}</div>
 		  <span>Tags: ${tags}</span>
