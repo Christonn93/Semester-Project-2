@@ -48,16 +48,16 @@ export async function displayListingUi() {
         const profile = JSON.parse(localStorage.getItem('Profile'));
         const { Name } = profile;
         if (Name == sellerName) {
-          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
         }
         break;
 
       case 'homepage':
         if (tags !== 'Car') {
-          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
           // console.log("error")
         } else {
-          listingItemsList.append(displayListingFactory('div', 'col', `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
         }
     }
   });

@@ -13,22 +13,26 @@
  * @param {*} id Adds post media if it is any
  * @returns the card with the information you want
  */
-export function displayListingFactory(elementName = '', className, elementId = '', media, title, description, tags, endsAt, id) {
+export function displayListingFactory(elementName = '', className = [], elementId = '', media, title, description, tags, endsAt, id) {
   const element = document.createElement(elementName);
-  element.classList.add(className);
+  element.classList.add(...className);
   element.id = elementId;
   element.innerHTML = `<div class="card mb-1 h-100 shadow bg-theme-beige">
+  <a href="/pages/listings/listing-item/index.html?id=${id}" class="ag-card-link text-theme-blue">
   <div class="row g-0">
-    <div class="col-md-4 d-flex justify-content-center">
-      <img src="${media}" class="ag-listing-img" alt="..." loading="lazy">
+    <div class="col d-flex flex-fill flex-column mb-2">
+      <div class="image-ratio">
+        <img class="image" src="${media}" loading="lazy" alt="this image have no alt text due to difficulties adding this from the api when its not option to add this" />
+        </div>
+      </div>
     </div>
-    <div class="col-md-8 d-flex flex-column">
+    <div class="col d-flex flex-column">
     <h3 class="card-title ms-3">${title}</h3>
       <div class="card-body ag-relative">
       <div>${description}</div>
 		  <span>Tags: ${tags}</span>
      </div>
-     <div class="d-flex flex-column gap-1 mx-2 justify-content-center">
+     <div class="d-flex flex-column gap-1 mx-2 justify-content-center mb-0 mt-auto p-2">
      <span class="ag-time shadow d-inline-flex justify-content-center align-items-center gap-2"><i class="fa-solid fa-clock"></i> ${endsAt}</span>
      <div class="d-flex gap-2 justify-content-end">
      <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">Read more</a>
@@ -36,6 +40,7 @@ export function displayListingFactory(elementName = '', className, elementId = '
      </div>
     </div>
   </div>
+  </a>
 </div>`;
   return element;
 }
