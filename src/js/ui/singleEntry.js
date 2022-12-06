@@ -44,7 +44,7 @@ export async function displaySingleEntryData() {
       carouselDiv.classList.add('carousel-item', 'ag-carousel');
 
       const imageEl = document.createElement('img');
-      imageEl.classList.add('d-block', 'w-100');
+      imageEl.classList.add('d-block', 'w-100', 'm-auto');
       imageEl.src = `${elem}`;
 
       carouselDiv.append(imageEl);
@@ -57,6 +57,11 @@ export async function displaySingleEntryData() {
         }
       } else {
         carouselDiv.classList.add('carousel-item', 'ag-carousel', 'active');
+        const imageNavBtn1 = document.querySelector('.carousel-control-next');
+        const imageNavBtn2 = document.querySelector('.carousel-control-prev');
+        imageNavBtn1.classList.add('d-none');
+        imageNavBtn2.classList.add('d-none');
+        // console.log("this is showing")
       }
 
       imageCarousel.append(carouselDiv);
