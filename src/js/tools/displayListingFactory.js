@@ -22,7 +22,7 @@ export function displayListingFactory(elementName = '', className = [], elementI
   <div class="row g-0">
     <div class="col d-flex flex-fill flex-column mb-2">
       <div class="image-ratio">
-        <img class="image" src="${media}" loading="lazy" alt="this image have no alt text due to difficulties adding this from the api when its not option to add this" />
+        <img class="image" src="${media}" loading="lazy" alt="Image-${id} have no alt text due to difficulties adding this from the api when its not option to add this" />
         </div>
       </div>
     </div>

@@ -27,11 +27,13 @@ export async function displayListingUi() {
 
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
-    } else if (el.status == 403) {
+    } else if (media.status == 403) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
     } else {
       media = media[0];
     }
+
+    const imageUrl = media[0] || `https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png`;
 
     const time = changeTimeFormat(endsAt);
 
