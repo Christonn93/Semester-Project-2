@@ -14,6 +14,8 @@ export async function displaySingleEntryData() {
     // Destructing arrays
     const { _count, bids, created, description, endsAt, id: itemId, media, seller, tags, title, updated } = data;
 
+    const time = changeTimeFormat(endsAt);
+
     // Selecting and adding content to title
     const titleElement = document.querySelector('#title');
     titleElement.innerText = title;
@@ -24,7 +26,7 @@ export async function displaySingleEntryData() {
 
     // Selecting and adding content to timeLeft
     const timeLeft = document.querySelector('#timeLeft');
-    timeLeft.innerHTML = `<i class="fa-solid fa-clock"></i> ${endsAt}`;
+    timeLeft.innerHTML = `<i class="fa-solid fa-clock"></i> ${time}`;
 
     // Selecting and adding content to seller information
     const sellerInfo = document.querySelector('#itemSeller');
@@ -33,19 +35,23 @@ export async function displaySingleEntryData() {
 
     // Selecting and adding content to image
     const imageCarousel = document.querySelector('#imageCarousel');
-    const imageArray = media;
-
+    let imageArray = media;
     const imageObject = {};
 
     imageArray.forEach((elem, i) => {
       imageObject[`url-${i}`] = elem;
+
       // console.log(imageObject);
       const carouselDiv = document.createElement('div');
       carouselDiv.classList.add('carousel-item', 'ag-carousel');
 
       const imageEl = document.createElement('img');
       imageEl.classList.add('d-block', 'w-100', 'm-auto');
-      imageEl.src = `${elem}`;
+      if (imageArray.length == 0) {
+        imageEl.src = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
+      } else {
+        imageEl.src = `${elem}`;
+      }
 
       carouselDiv.append(imageEl);
       const parent = document.querySelector('#imageCarousel');
