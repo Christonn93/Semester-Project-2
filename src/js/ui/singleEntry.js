@@ -1,5 +1,6 @@
 import { getListings } from '../api/user/listings/listItemDetail.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
+import { sortAmountAsc } from '../tools/arraySorting.js';
 
 const storageToken = localStorage.getItem('Token');
 const urlParams = new URL(location.href);
@@ -13,6 +14,8 @@ export async function displaySingleEntryData() {
 
     // Destructing arrays
     const { _count, bids, created, description, endsAt, id: itemId, media, seller, tags, title, updated } = data;
+
+    document.querySelector('title').innerText += title;
 
     const time = changeTimeFormat(endsAt);
 
@@ -82,8 +85,11 @@ export async function displaySingleEntryData() {
     const bidAmount = JSON.stringify(countBids);
 
     if (storageToken) {
-      bids.forEach((bid) => {
-        const { bidderName, amount, created: bidCreated, id: biddersId } = bid;
+      const sortedBids = sortAmountAsc(bids);
+
+      sortedBids.forEach((bid) => {
+        const { bidderName, amount, created: bidCreated } = bid;
+
         let num;
         num = ++startNum;
 

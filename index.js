@@ -11,5 +11,6 @@ f.routerSwitch();
 f.signUpUser();
 f.userAvatarUpdate();
 f.addBidListener();
+f.serviceProvider();
 
 // All this code is just for testing, remove when testing is complete

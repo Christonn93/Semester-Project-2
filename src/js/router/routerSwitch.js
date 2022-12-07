@@ -17,6 +17,12 @@ export function routerSwitch() {
       break;
 
     // New entry UI settings
+    case 'singleEntry':
+      // Page title
+      document.querySelector('title').innerText = defaultTitle + ` || `;
+      break;
+
+    // New entry UI settings
     case 'newEntry':
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `New entry`;

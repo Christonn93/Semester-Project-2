@@ -4,7 +4,8 @@ import * as apiUrl from '../constant.js';
 
 export async function getProfileDetails() {
   const storageToken = JSON.parse(localStorage.getItem('Token'));
-  const userName = JSON.parse(localStorage.getItem('Name'));
+  const profile = JSON.parse(localStorage.getItem('Profile'));
+  const userName = profile.Name;
   const options = {
     method: 'GET',
     headers: {
@@ -13,13 +14,10 @@ export async function getProfileDetails() {
     },
   };
   try {
-    const req = await fetch(apiUrl.api_base_url + apiUrl.GetProfileDetails + `${userName}?_listings=true`, options);
+    const req = await fetch(apiUrl.api_base_url + apiUrl.GetProfileDetails + `${userName}?_listings=true&_wins=true`, options);
     if (req.ok) {
-      console.log(await req.json());
-      const { name, avatar, credits, email, listings, wins } = await req.json();
-
+      const { name, avatar, credits, email, listings: listings = [], wins: wins = [] } = await req.json();
       // Store profile object
-      localStorage.removeItem('Profile');
       const profile = new UserProfile(name, avatar, credits, email, listings, wins);
       new Store('Profile', profile);
     }
