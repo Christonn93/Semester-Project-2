@@ -48,10 +48,13 @@ export async function displayListingUi() {
 
         // Filtering response basted on user name
         const profile = JSON.parse(localStorage.getItem('Profile'));
-        const { Name } = profile;
-        if (Name == sellerName) {
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+        if (profile) {
+          const { Name } = profile;
+          if (Name == sellerName) {
+            listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+          }
         }
+
         break;
 
       case 'homepage':
