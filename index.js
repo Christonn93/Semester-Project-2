@@ -12,5 +12,6 @@ f.signUpUser();
 f.userAvatarUpdate();
 f.addBidListener();
 f.serviceProvider();
+f.scrollToTop();
 
 // All this code is just for testing, remove when testing is complete
