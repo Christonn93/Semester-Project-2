@@ -9,15 +9,14 @@ export async function getListings() {
     body: JSON.stringify(),
   };
   try {
-    const req = await fetch(url.api_base_url + url.listingEndPoint + '&offset=100', options);
+    const req = await fetch(url.api_base_url + url.listingEndPoint, options);
     if (req.ok) {
-      // Destructuring response object
-
       const data = await req.json();
-      // console.log('From listings.js', data);
+      console.log('From listings.js', data);
       return data;
     }
-  } catch {
-    // Show user a message that they couldn't log in
+  } catch (error) {
+    // If there is some issue with the request this message will display for the user
+    console.log('Oh no!!', error.message);
   }
 }

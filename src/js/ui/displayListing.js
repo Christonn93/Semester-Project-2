@@ -2,27 +2,20 @@ import { getListings } from '../api/user/listings/listings.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 
-import { tagSorting } from '../api/user/listings/tagSorting.js';
-tagSorting();
-
 export async function displayListingUi() {
   const data = await getListings();
+  function tagSorting() {
+    const tags = data.flatMap((obj) => obj.tags);
+    return tags;
+  }
 
-  // const filteredTags = data.map((e) => {
-  //   const tags = e.tags;
-  //   return tags;
-  // });
-
-  // // const newTagsObject = {...filteredTags}
-  // filteredTags.forEach((e) => {
-  //   const newTagsObject = Object.assign({}, e);
-  // });
+  const sortingOfTags = tagSorting();
 
   const userToken = localStorage.getItem('Token');
   const listingItemsList = document.getElementById('listingItems');
 
   data.forEach((el) => {
-    let { title, description, tags: tags = [], media: media = [], endsAt, id, updated, created, _count, seller, bids } = el;
+    let { title, description, tags: tags = [], media: media = [], endsAt, id, seller } = el;
     let { name: sellerName } = seller;
 
     if (media.length === 0) {
@@ -33,12 +26,13 @@ export async function displayListingUi() {
       media = media[0];
     }
 
-    const imageUrl = media[0] || `https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png`;
+    // const imageUrl = media[0] || `https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png`;
 
     const time = changeTimeFormat(endsAt);
 
     // Switch for displaying cards
     const routeName = document.body.id;
+    const profile = JSON.parse(localStorage.getItem('Profile'));
     switch (routeName) {
       // Display only user listings
       case 'dashboard':
@@ -47,23 +41,22 @@ export async function displayListingUi() {
         }
 
         // Filtering response basted on user name
-        const profile = JSON.parse(localStorage.getItem('Profile'));
         if (profile) {
           const { Name } = profile;
+          console.log(Name);
           if (Name == sellerName) {
             listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
           }
         }
-
         break;
 
       case 'homepage':
-        if (tags !== 'Car') {
+        if (sortingOfTags == 'car') {
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
-          // console.log("error")
         } else {
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
         }
+        break;
     }
   });
 }
