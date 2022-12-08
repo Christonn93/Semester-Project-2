@@ -1,3 +1,5 @@
+import * as func from '../index';
+
 export function routerSwitch() {
   // Default/Fallback page title
   const defaultTitle = 'Auction Garage';
@@ -8,24 +10,50 @@ export function routerSwitch() {
     case 'homepage':
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `Homepage`;
+      func.userSearch();
+      func.displayListingUi();
       break;
 
     // Profile UI settings
     case 'dashboard':
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `Dashboard`;
+      func.displayProfileInformation();
+      func.userAvatarUpdate();
       break;
 
     // New entry UI settings
     case 'singleEntry':
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || `;
+      func.displaySingleEntryData();
+      func.addBidListener();
       break;
 
     // New entry UI settings
     case 'newEntry':
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `New entry`;
+      break;
+
+    // About UI settings
+    case 'about':
+      // Page title
+      document.querySelector('title').innerText = defaultTitle + ` || ` + `About Us`;
+      break;
+
+    // Contact UI settings
+    case 'contact':
+      // Page title
+      document.querySelector('title').innerText = defaultTitle + ` || ` + `Contact Us`;
+      break;
+
+    // listings UI settings
+    case 'page-listings':
+      // Page title
+      document.querySelector('title').innerText = defaultTitle + ` || ` + `Listing`;
+      func.userSearch();
+      func.displayListingUi();
       break;
 
     // 404 UI settings

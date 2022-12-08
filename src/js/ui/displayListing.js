@@ -57,6 +57,14 @@ export async function displayListingUi() {
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
         }
         break;
+
+      case 'page-listings':
+        if (sortingOfTags == 'car') {
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+        } else {
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+        }
+        break;
     }
   });
 }

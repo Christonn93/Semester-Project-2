@@ -10,6 +10,10 @@
   }
 }
 
+.modal-backdrop {
+  z-index: 1015 !important;
+}
+
 /* Dashboard */
 .container-sidebar {
   min-width: fit-content !important;

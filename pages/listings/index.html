@@ -8,25 +8,25 @@
 
     <!-- FavIcon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link href="../../../dist/css/index.css" rel="stylesheet" />
+    <link href="/dist/css/index.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/af67014470.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="d-flex flex-column flex-fill min-vh-100 gap-4" id="dashboard">
+  <body class="d-flex flex-column flex-fill min-vh-100 gap-4" id="page-listings">
     <button class="btn btn-theme-beige shadow-lg" id="scrollToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
     <header class="bg-theme-blue sticky-top">
       <nav class="navbar bg-theme-blue">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="../../../src/assets/auction-garage.png" class="ag-logo" />
+            <img src="/src/assets/auction-garage.png" class="ag-logo" />
           </a>
           <button class="navbar-toggler border-theme-beige shadow bg-theme-beige" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header bg-theme-blue">
-              <img src="../../../src/assets/auction-garage.png" class="ag-logo" />
+              <img src="/src/assets/auction-garage.png" class="ag-logo" />
               <button type="button" class="btn-close bg-theme-beige" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body bg-theme-blue d-flex flex-column">
@@ -39,7 +39,7 @@
                     <a class="nav-link text-theme-beige text-center" href="/pages/listings/index.html">Listing</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a class="nav-link text-theme-beige text-center" href="/pages/about/contact/index.html">Contact</a>
+                    <a class="nav-link text-theme-beige text-center" href="/pages/about/index.html">About us</a>
                   </li>
                 </ul>
               </div>
@@ -147,9 +147,15 @@
       <div class="container d-flex">
         <div class="container-fluid container-dashboard-content">
           <div class="container d-flex flex-column gap-3">
-            <div class="container">
-              <h1>Listings</h1>
-              <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-4 mt-5" id="listingItems"></div>
+            <div class="container bg-theme-beige p-2 card mb-3">
+              <label for="search"><strong>Search listings</strong></label>
+              <input id="search" class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" data-search />
+            </div>
+            <div class="container d-flex gap-2 flex-column">
+              <div class="mb-5">
+                <h1>All listings</h1>
+              </div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gap-4 gy-4 justify-content-center" id="listingItems"></div>
             </div>
           </div>
         </div>
@@ -176,7 +182,7 @@
         </div>
       </div>
     </footer>
-    <script src="/../../../index.js" type="module"></script>
+    <script src="/index.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

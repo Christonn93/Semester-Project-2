@@ -1,6 +1,6 @@
 import { getListings } from '../api/user/listings/listItemDetail.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
-import { sortAmountAsc } from '../tools/arraySorting.js';
+import { sortAmountAsc } from '../tools/sorting/arraySorting.js';
 
 const storageToken = localStorage.getItem('Token');
 const urlParams = new URL(location.href);
@@ -13,7 +13,7 @@ export async function displaySingleEntryData() {
     console.log('From singleEntry.js', data);
 
     // Destructing arrays
-    const { _count, bids, created, description, endsAt, id: itemId, media, seller, tags, title, updated } = data;
+    const { _count, bids, description, endsAt, media, seller, title } = data;
 
     document.querySelector('title').innerText += title;
 
@@ -82,7 +82,9 @@ export async function displaySingleEntryData() {
     let startNum = 0;
 
     const { bids: countBids } = _count;
-    const bidAmount = JSON.stringify(countBids);
+    const bidAmount = countBids;
+
+    console.log(bidAmount);
 
     if (storageToken) {
       const sortedBids = sortAmountAsc(bids);
@@ -104,14 +106,16 @@ export async function displaySingleEntryData() {
                               `;
         bidList.append(listItem);
       });
-    } else if (storageToken || _count == 0) {
-      const listItem = document.createElement('tr');
-      listItem.classList.add('table-info');
-      listItem.innerHTML = `<th scope="row" class="table-info"></th>
-                              <td class="table-info">No bids placed yet! Be the first one to bid on this entry</td>
-                              <td class="table-info"></td>
-                              <td class="table-info"></td>`;
-      bidList.append(listItem);
+      if (countBids == 0) {
+        // console.log('something');
+        const listItem = document.createElement('tr');
+        listItem.classList.add('table-info');
+        listItem.innerHTML = `<th scope="row" class="table-info"></th>
+                                <td class="table-info">No bids placed yet! Be the first one to bid on this entry</td>
+                                <td class="table-info"></td>
+                                <td class="table-info"></td>`;
+        bidList.append(listItem);
+      }
     } else {
       const listItem = document.createElement('tr');
       listItem.classList.add('table-info');
