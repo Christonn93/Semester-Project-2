@@ -1,4 +1,4 @@
-import * as func from '../index';
+import * as func from '../index.js';
 
 export function routerSwitch() {
   // Default/Fallback page title
