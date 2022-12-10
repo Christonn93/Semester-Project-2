@@ -17,7 +17,7 @@ export function displayListingFactory(elementName = '', className = [], elementI
   const element = document.createElement(elementName);
   element.classList.add(...className);
   element.id = elementId;
-  element.innerHTML = `<div class="card mb-2 h-100 w-80 shadow bg-theme-beige">
+  element.innerHTML = `<div class="card mb-2 mx-2 h-100 w-85 shadow bg-theme-beige">
   <a href="/pages/listings/listing-item/index.html?id=${id}" class="ag-card-link text-theme-blue">
   <div class="row g-0">
     <div class="col d-flex flex-fill flex-column mb-2">

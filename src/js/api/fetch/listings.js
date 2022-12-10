@@ -8,8 +8,16 @@ export async function getListings() {
     },
     body: JSON.stringify(),
   };
+
+  const routeName = document.body.id;
+
   try {
-    const req = await fetch(url.api_base_url + url.listingEndPoint, options);
+    let req = await fetch(url.api_base_url + url.listingEndPoint, options);
+
+    if (routeName == 'homepage') {
+      req = await fetch(url.api_base_url + url.listingEndPoint + '&limit=12', options);
+    }
+
     if (req.ok) {
       const data = await req.json();
       // console.log('From listings.js', data);

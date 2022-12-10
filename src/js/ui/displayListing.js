@@ -10,13 +10,13 @@ export async function displayListingUi() {
   }
 
   const sortingOfTags = tagSorting();
-
-  const userToken = localStorage.getItem('Token');
   const listingItemsList = document.getElementById('listingItems');
 
   data.forEach((el) => {
-    let { title, description, tags: tags = [], media: media = [], endsAt, id, seller } = el;
-    let { name: sellerName } = seller;
+    if (el.length < 10) {
+      return;
+    }
+    let { title, description, tags: tags = [], media: media = [], endsAt, id } = el;
 
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
@@ -32,24 +32,7 @@ export async function displayListingUi() {
 
     // Switch for displaying cards
     const routeName = document.body.id;
-    const profile = JSON.parse(localStorage.getItem('Profile'));
     switch (routeName) {
-      // Display only user listings
-      case 'dashboard':
-        if (!userToken) {
-          window.location.replace('../../../index.html');
-        }
-
-        // Filtering response basted on user name
-        if (profile) {
-          const { Name } = profile;
-          console.log(Name);
-          if (Name == sellerName) {
-            listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
-          }
-        }
-        break;
-
       case 'homepage':
         if (sortingOfTags == 'car') {
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
