@@ -1,4 +1,4 @@
-import * as url from '../../constant.js';
+import * as url from '../constant.js';
 
 export async function getListings() {
   const options = {
@@ -12,7 +12,7 @@ export async function getListings() {
     const req = await fetch(url.api_base_url + url.listingEndPoint, options);
     if (req.ok) {
       const data = await req.json();
-      console.log('From listings.js', data);
+      // console.log('From listings.js', data);
       return data;
     }
   } catch (error) {

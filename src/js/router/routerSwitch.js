@@ -20,6 +20,7 @@ export function routerSwitch() {
       document.querySelector('title').innerText = defaultTitle + ` || ` + `Dashboard`;
       func.displayProfileInformation();
       func.userAvatarUpdate();
+      func.displayUserListingsUi();
       break;
 
     // New entry UI settings

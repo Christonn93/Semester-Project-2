@@ -1,4 +1,4 @@
-import { getListings } from '../api/user/listings/listings.js';
+import { getListings } from '../api/fetch/listings.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 

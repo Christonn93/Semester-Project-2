@@ -1,4 +1,5 @@
 export * from './dashboardDisplay.js';
+export * from './displayUserListings.js';
 export * from './displayListing.js';
 export * from './supporter.js';
 export * from './userOptionBtn.js';

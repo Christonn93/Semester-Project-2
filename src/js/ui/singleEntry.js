@@ -1,4 +1,4 @@
-import { getListings } from '../api/user/listings/listItemDetail.js';
+import { getListings } from '../api/fetch/listItemDetail.js';
 import { changeTimeFormat } from '../tools/changeTime.js';
 import { sortAmountAsc } from '../tools/sorting/arraySorting.js';
 
@@ -10,7 +10,7 @@ export async function displaySingleEntryData() {
   const routeName = document.body.id;
   if (routeName == 'singleEntry') {
     const data = await getListings(storageToken, id);
-    console.log('From singleEntry.js', data);
+    // console.log('From singleEntry.js', data);
 
     // Destructing arrays
     const { _count, bids, description, endsAt, media, seller, title } = data;
@@ -82,9 +82,6 @@ export async function displaySingleEntryData() {
     let startNum = 0;
 
     const { bids: countBids } = _count;
-    const bidAmount = countBids;
-
-    console.log(bidAmount);
 
     if (storageToken) {
       const sortedBids = sortAmountAsc(bids);

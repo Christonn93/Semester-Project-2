@@ -1,4 +1,4 @@
-import { getListings } from '../api/user/listings/listings.js';
+import { getListings } from '../api/fetch/listings.js';
 
 // Selecting html element for use in search function
 const searchInput = document.getElementById('search');

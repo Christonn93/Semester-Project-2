@@ -16,7 +16,9 @@ export async function getProfileDetails() {
   try {
     const req = await fetch(apiUrl.api_base_url + apiUrl.GetProfileDetails + `${userName}?_listings=true&_wins=true`, options);
     if (req.ok) {
-      const { name, avatar, credits, email, listings: listings = [], wins: wins = [] } = await req.json();
+      const data = await req.json();
+      const { name, avatar, credits, email, listings: listings = [], wins: wins = [] } = data;
+      // console.log('From profileListingFetch.js', data);
       // Store profile object
       const profile = new UserProfile(name, avatar, credits, email, listings, wins);
       new Store('Profile', profile);
