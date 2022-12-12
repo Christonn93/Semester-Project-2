@@ -2,7 +2,7 @@
 export * from './api/index.js';
 export * from './api/auth/index.js';
 export * from './api/user/index.js';
-export * from './api/user/listings/index.js';
+export * from './api/listings/index.js';
 
 // Router exports
 export * from './router/index.js';

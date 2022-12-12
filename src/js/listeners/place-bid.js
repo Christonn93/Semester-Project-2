@@ -1,4 +1,4 @@
-import { placeBidOnEntry } from '../api/user/listings/place-bid.js';
+import { placeBidOnEntry } from '/src/js/api/listings/place-bid.js';
 
 export const addBidListener = () => {
   const bidForm = document.querySelector('#placeBidForm');

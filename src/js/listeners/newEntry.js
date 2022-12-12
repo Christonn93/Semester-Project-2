@@ -1,8 +1,8 @@
 // NOTE. Some part of the setup is based on this:
 // https://github.com/Christonn93/work-flow-ca-social-media-client/blob/master/src/js/templates/post/form.js
 
-import { createNewEntry } from '../api/user/listings/createNew.js';
-import { updateEntry } from '../api/user/listings/updateEntry.js';
+import { createNewEntry } from '/src/js/api/listings/createNew.js';
+import { updateEntry } from '/src/js/api/listings/updateEntry.js';
 
 const form = document.querySelector('#newEntryForm');
 if (form) {
@@ -26,12 +26,11 @@ if (form) {
 
     // send it to API
     if (!id) {
-      let post;
-      post = await createNewEntry(title, description, media, tags, endsAt);
+      await createNewEntry(title, description, media, tags, endsAt);
       window.location.replace('../');
     } else {
-      post = await updateEntry(title, description, media, tags, endsAt);
-      window.location.replace('../');
+      await updateEntry(title, description, media, tags, endsAt);
+      window.location.reload();
     }
   });
 }

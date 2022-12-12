@@ -1,5 +1,5 @@
-import * as url from '../../constant.js';
-import { uiMessage } from '../../../ui/errorHandling.js';
+import * as url from '/src/js/api/constant.js';
+import { uiMessage } from '/src/js/ui/errorHandling.js';
 
 export async function createNewEntry(title, description, media, tags, endsAt) {
   const token = JSON.parse(localStorage.getItem('Token'));

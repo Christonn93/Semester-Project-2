@@ -1,4 +1,4 @@
-import * as url from '../../constant.js';
+import * as url from '/src/js/api/constant.js';
 
 export async function placeBidOnEntry(token, id, amount) {
   const options = {
