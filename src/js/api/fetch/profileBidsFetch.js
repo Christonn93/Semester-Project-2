@@ -2,7 +2,7 @@ import * as url from '/src/js/api/constant.js';
 
 const storageToken = JSON.parse(localStorage.getItem('Token'));
 
-export async function profileListingFetch() {
+export async function profileBidsFetch() {
   const options = {
     method: 'GET',
     headers: {
@@ -17,10 +17,10 @@ export async function profileListingFetch() {
     const { Name: userName } = profile;
 
     try {
-      const req = await fetch(url.api_base_url + `auction/profiles/${userName}?_listings=true&_wins=true&_sort=created&_sortOrder=asc`, options);
+      const req = await fetch(url.api_base_url + `auction/profiles/${userName}/bids?_listings=true`, options);
       if (req.ok) {
         const data = await req.json();
-        // console.log('From profileListingFetch.js', data);
+        console.log('From profileBidsFetch.js', data);
         return data;
       }
     } catch (error) {
