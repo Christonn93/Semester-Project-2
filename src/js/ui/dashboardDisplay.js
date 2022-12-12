@@ -70,7 +70,7 @@ export async function displayProfileInformation() {
 
       // displaying link for re routing to create new entry
       const linkUrl = '/pages/user/dashboard/new-listing/index.html';
-      const displayLinkNewEntry = linkFactory(['nav-link'], 'newEntryLink', linkUrl, `Create listing`);
+      const displayLinkNewEntry = linkFactory(['nav-link', 'mb-3', 'text-center'], 'newEntryLink', linkUrl, `Create listing`);
 
       user.append(displayUserImage, displayUserName, displayUserEmail, displayUserCredits, displayWinAmount, displayUserListingAmount, displayModalButton, sidebarDivider, displayLinkNewEntry);
     }
