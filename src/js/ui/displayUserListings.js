@@ -15,7 +15,7 @@ export async function displayUserListingsUi() {
   const listingItemsList = document.getElementById('listingItems');
 
   dataListing.forEach((el) => {
-    let { title, description, tags: tags = [], media: media = [], endsAt, id } = el;
+    let { title, tags: tags = [], media: media = [], endsAt, id } = el;
     const time = changeTimeFormat(endsAt);
 
     if (media.length === 0) {
@@ -26,6 +26,6 @@ export async function displayUserListingsUi() {
       media = media[0];
     }
 
-    listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+    listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
   });
 }

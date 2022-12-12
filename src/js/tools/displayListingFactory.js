@@ -13,7 +13,7 @@
  * @param {*} id Adds post media if it is any
  * @returns the card with the information you want
  */
-export function displayListingFactory(elementName = '', className = [], elementId = '', media, title, description, tags, endsAt, id) {
+export function displayListingFactory(elementName = '', className = [], elementId = '', media, title, tags, endsAt, id) {
   const element = document.createElement(elementName);
   element.classList.add(...className);
   element.id = elementId;
@@ -29,7 +29,6 @@ export function displayListingFactory(elementName = '', className = [], elementI
     <div class="col d-flex flex-column">
     <h2 class="card-title ms-3">${title}</h2>
       <div class="card-body ag-relative">
-      <div>${description}</div>
 		  <span>Tags: ${tags}</span>
      </div>
      <div class="d-flex flex-column gap-1 mx-2 justify-content-center mb-0 mt-auto p-2">

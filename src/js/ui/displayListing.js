@@ -16,7 +16,7 @@ export async function displayListingUi() {
     if (el.length < 10) {
       return;
     }
-    let { title, description, tags: tags = [], media: media = [], endsAt, id } = el;
+    let { title, tags: tags = [], media: media = [], endsAt, id } = el;
 
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
@@ -35,17 +35,17 @@ export async function displayListingUi() {
     switch (routeName) {
       case 'homepage':
         if (sortingOfTags == 'car') {
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         } else {
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         }
         break;
 
       case 'page-listings':
         if (sortingOfTags == 'car') {
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         } else {
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, description, tags, time, id));
+          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         }
         break;
     }

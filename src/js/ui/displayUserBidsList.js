@@ -22,20 +22,18 @@ export async function displayUserBids() {
 
     console.log(displayMedia);
 
-    let items = document.createElement('ul');
-    items.classList.add('list-group', 'list-group-horizontal', 'shadow', 'bg-theme-beige');
-    items.innerHTML = `<li class="list-group-item bg-theme-beige">
-            <h3>${title}</h3>
-        </li>
-        <li class="list-group-item bg-theme-beige">
-            <div class="">
-                <p class="p-0 m-0">Your bid: ${amount}</p>
-                <p class="p-0 m-0">Ends at: ${newTime}</p>
-            </div>
-        </li>
-        <li class="list-group-item bg-theme-beige">
-            <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">View item</a>
-        </li>`;
-    // parentElement.append(items);
+    let items = document.createElement('div');
+    items.classList.add('container', 'card', 'shadow', 'bg-theme-beige', 'flex-lg-row', 'p-2', 'gap-2', 'align-items-center', 'flex-sm-column', 'flex-md-column');
+    items.innerHTML = `<div class="container">
+    <h4>${title}</h4>
+  </div>
+  <div class="container-fluid d-flex flex-column gap-1">
+  <span>Bid amount: ${amount} <i class="fa-solid fa-coins"></i></span>
+  <span>Ending at: ${newTime}</span>
+  </div>
+  <div class="container d-flex justify-content-end">
+    <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">View item</a>
+  </div>`;
+    parentElement.append(items);
   });
 }
