@@ -1,4 +1,4 @@
-import * as url from '/src/js/api/constant.js';
+import * as url from '../constant.js';
 
 const storageToken = JSON.parse(localStorage.getItem('Token'));
 
