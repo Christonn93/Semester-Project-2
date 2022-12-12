@@ -1,0 +1,47 @@
+/* Listing */
+.ag-card-link {
+  text-decoration: none;
+}
+
+.ag-listing-item {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.ag-listing-img {
+  width: 100%;
+  min-height: 100px;
+  max-height: 100%;
+}
+
+.entry-items {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ag-time {
+  position: absolute;
+  display: flex;
+  overflow: auto;
+  width: fit-content;
+  padding: 0.202em 0.6180469716em;
+  border-radius: 5px;
+  color: #fff !important;
+  border: 0 !important;
+  top: -0.8rem !important;
+  left: -0.5rem !important;
+  filter: drop-shadow(2px 2px 8px #0003) !important;
+  font-size: clamp(16px, 1rem, 21px);
+  background: #a0464a !important;
+  z-index: 99 !important;
+  background: -moz-linear-gradient(-45deg, #b70000 0%, #c00 47%, #d63232 100%);
+  background: -webkit-linear-gradient(-45deg, #b70000 0%, #cc0000 47%, #d63232 100%);
+  background: linear-gradient(135deg, #b70000 0%, #c00 47%, #d63232 100%);
+}
+
+.card .card-text {
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 700;
+  margin-bottom: 10px;
+}

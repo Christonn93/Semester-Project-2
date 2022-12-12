@@ -1,0 +1,28 @@
+/* Dashboard */
+.container-sidebar {
+  max-width: max-content !important;
+}
+
+.container-dashboard-content {
+  max-width: 85%;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.ag-profile-img {
+  max-width: 150px;
+}
+
+.ag-absolute.avatar-gear {
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+@media screen and (max-width: 800px) {
+  .container-sidebar {
+    max-width: 80% !important;
+  }
+}

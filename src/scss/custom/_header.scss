@@ -1,0 +1,15 @@
+/* Header */
+.ag-logo {
+  width: calc(100% - 200px);
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .ag-logo {
+    width: 200px;
+  }
+}
+
+.modal-backdrop {
+  z-index: 1015 !important;
+}

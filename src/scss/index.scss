@@ -1,4 +1,12 @@
 @import './custom/theme_variables';
+@import './custom/header';
+@import './custom/footer';
+@import './custom/typography';
+
 @import './custom/custom';
 @import './custom/button';
+@import './custom/dashBoard';
+@import './custom/entryCards';
+@import './custom/singleEntry';
+
 @import '../../node_modules/bootstrap/scss/bootstrap';
