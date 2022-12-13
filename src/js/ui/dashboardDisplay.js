@@ -11,6 +11,8 @@ export async function displayProfileInformation() {
 
     const user = document.querySelector('#profileContent');
     if (user) {
+      document.getElementById('username').innerText = username;
+
       // Setting src for user avatar image
       const displayUserImage = imageFactory(['ag-profile-img', 'shadow', 'ag-relative', 'mx-auto', 'mb-3'], 'userImage', `${imageUrl}`, 'Profile image');
 

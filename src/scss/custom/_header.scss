@@ -4,12 +4,12 @@
   height: auto;
 }
 
+.modal-backdrop {
+  z-index: 1015 !important;
+}
+
 @media screen and (max-width: 800px) {
   .ag-logo {
     width: 200px;
   }
-}
-
-.modal-backdrop {
-  z-index: 1015 !important;
 }
