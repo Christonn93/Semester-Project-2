@@ -53,7 +53,7 @@ export function routerSwitch() {
     // listings UI settings
     case 'page-listings':
       // Page title
-      document.querySelector('title').innerText = defaultTitle + ` || ` + `Listing`;
+      document.querySelector('title').innerText = defaultTitle + ` || ` + `Listings`;
       func.userSearch();
       func.displayListingUi();
       break;
