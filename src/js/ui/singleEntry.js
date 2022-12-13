@@ -1,5 +1,5 @@
 import { getListings } from '../api/fetch/listItemDetail.js';
-import { changeTimeFormat } from '../tools/changeTime.js';
+import { changeTimeFormat } from '../tools/time/changeTime.js';
 import { sortAmountAsc } from '../tools/sorting/arraySorting.js';
 
 const storageToken = localStorage.getItem('Token');

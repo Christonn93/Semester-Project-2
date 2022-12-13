@@ -1,5 +1,5 @@
 import { profileListingFetch } from '../api/fetch/profileListingFetch.js';
-import { changeTimeFormat } from '../tools/changeTime.js';
+import { changeTimeFormat } from '../tools/time/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 
 const userToken = localStorage.getItem('Token');

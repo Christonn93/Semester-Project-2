@@ -15,7 +15,7 @@ export async function getListings() {
     let req = await fetch(url.api_base_url + url.listingEndPoint, options);
 
     if (routeName == 'homepage') {
-      req = await fetch(url.api_base_url + url.listingEndPoint + '&limit=12', options);
+      req = await fetch(url.api_base_url + url.listingEndPoint + '&limit=12&active=true', options);
     }
 
     if (req.ok) {

@@ -1,5 +1,5 @@
 import { getListings } from '../api/fetch/listings.js';
-import { changeTimeFormat } from '../tools/changeTime.js';
+import { changeTimeFormat } from '../tools/time/changeTime.js';
 import { displayListingFactory } from '../tools/displayListingFactory.js';
 
 export async function displayListingUi() {
@@ -18,6 +18,8 @@ export async function displayListingUi() {
     }
     let { title, tags: tags = [], media: media = [], endsAt, id } = el;
 
+    const time = changeTimeFormat(endsAt);
+
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
     } else if (media.status == 403) {
@@ -25,10 +27,6 @@ export async function displayListingUi() {
     } else {
       media = media[0];
     }
-
-    // const imageUrl = media[0] || `https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png`;
-
-    const time = changeTimeFormat(endsAt);
 
     // Switch for displaying cards
     const routeName = document.body.id;

@@ -1,5 +1,5 @@
 import { profileBidsFetch } from '../api/fetch/profileBidsFetch.js';
-import { changeTimeFormat } from '../tools/changeTime.js';
+import { changeTimeFormat } from '../tools/time/changeTime.js';
 
 const parentElement = document.getElementById('placedBids');
 
