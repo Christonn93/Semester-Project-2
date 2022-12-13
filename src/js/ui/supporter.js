@@ -4,20 +4,12 @@ const links = [
     link: 'https://auctioneer-sp2.netlify.app/',
   },
   {
-    name: 'second name',
-    link: 'www.finn.no',
+    name: 'find.no',
+    link: 'https://auction-chasju.netlify.app/',
   },
   {
-    name: '',
-    link: '',
-  },
-  {
-    name: '',
-    link: '',
-  },
-  {
-    name: '',
-    link: '',
+    name: 'Forgotten Treasures',
+    link: 'https://anclagen.github.io/Semester-Project-2/index.html',
   },
 ];
 
