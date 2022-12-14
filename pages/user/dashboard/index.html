@@ -146,19 +146,21 @@
       </nav>
     </header>
 
-    <main class="container-fluid d-flex flex-fill">
+    <main class="container-fluid d-flex flex-fill flex-column">
+      <div class="container">
+        <div class="container mb-3">
+          <h1>Welcome back <span id="username"></span></h1>
+        </div>
+      </div>
+
       <div class="container d-flex flex-column flex-lg-row gap-5">
         <div class="container-fluid container-sidebar ag-relative">
           <div class="card p-2 mx-auto" id="profileContent"></div>
         </div>
 
         <div class="container-fluid container-dashboard-content">
-          <div class="container mb-3">
-            <h1>Welcome back <span id="username"></span></h1>
-          </div>
-
           <div class="container mt-2">
-            <ul class="nav nav-tabs mb-3 bg-theme-beige" id="myTab" role="tablist">
+            <ul class="nav nav-tabs mb-3 bg-theme-beige mx-auto" id="myTab" role="tablist">
               <li class="nav-item bg-theme-beige" role="presentation">
                 <button class="nav-link active text-theme-blue" id="bids-tab" data-bs-toggle="tab" data-bs-target="#bids-tab-pane" type="button" role="tab" aria-controls="bids-tab-pane" aria-selected="true">Your bids</button>
               </li>
