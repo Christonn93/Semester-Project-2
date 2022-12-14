@@ -22,7 +22,7 @@ export async function displayListingUi() {
     const itemDate = new Date(time);
     const todayDate = new Date();
 
-    if (itemDate >= todayDate) {
+    if (itemDate <= todayDate) {
       time = `<i class="fa-solid fa-exclamation"></i> Auction ended`;
     }
 
