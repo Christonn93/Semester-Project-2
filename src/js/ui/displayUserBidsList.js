@@ -10,7 +10,13 @@ export async function displayUserBids() {
     const { amount, listing } = bid;
     const { title, id, endsAt } = listing;
 
-    const newTime = changeTimeFormat(endsAt);
+    let time = changeTimeFormat(endsAt);
+    const itemDate = new Date(time);
+    const todayDate = new Date();
+
+    if (itemDate <= todayDate) {
+      time = `<i class="fa-solid fa-exclamation"></i> Auction ended`;
+    }
 
     let items = document.createElement('div');
     items.classList.add('container', 'card', 'shadow', 'bg-theme-beige', 'flex-lg-row', 'p-2', 'gap-2', 'align-items-center', 'flex-sm-column', 'flex-md-column');
@@ -19,7 +25,7 @@ export async function displayUserBids() {
   </div>
   <div class="container-fluid d-flex flex-column gap-1">
   <span>Bid amount: ${amount} <i class="fa-solid fa-coins"></i></span>
-  <span>Ending at: ${newTime}</span>
+  <span>Ending at: ${time}</span>
   </div>
   <div class="container d-flex justify-content-end">
     <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">View item</a>

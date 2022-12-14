@@ -13,10 +13,17 @@ export async function displayUserListingsUi() {
   const dataListing = data.listings;
 
   const listingItemsList = document.getElementById('listingItems');
+  const listingItemsEnded = document.getElementById('listingItemsEnded');
 
   dataListing.forEach((el) => {
     let { title, tags: tags = [], media: media = [], endsAt, id } = el;
-    const time = changeTimeFormat(endsAt);
+    let time = changeTimeFormat(endsAt);
+    const itemDate = new Date(time);
+    const todayDate = new Date();
+
+    if (itemDate <= todayDate) {
+      time = `<i class="fa-solid fa-exclamation"></i> Auction ended`;
+    }
 
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
@@ -28,10 +35,12 @@ export async function displayUserListingsUi() {
 
     const items = displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id);
 
-    listingItemsList.append(items);
-
-    if (items) {
+    if (itemDate <= todayDate) {
+      listingItemsEnded.append(items);
       document.getElementById('empty-listing').classList.add('d-none');
+    } else {
+      listingItemsList.append(items);
+      document.getElementById('empty-listingEnded').classList.add('d-none');
     }
   });
 }

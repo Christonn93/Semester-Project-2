@@ -17,7 +17,7 @@ export async function profileListingFetch() {
     const { Name: userName } = profile;
 
     try {
-      const req = await fetch(url.api_base_url + `auction/profiles/${userName}?_listings=true&_wins=true&_sort=created&_sortOrder=asc&active=true`, options);
+      const req = await fetch(url.api_base_url + `auction/profiles/${userName}?_listings=true&_wins=true&sort=created&sortOrder=dec&active=true`, options);
       if (req.ok) {
         const data = await req.json();
         // console.log('From profileListingFetch.js', data);

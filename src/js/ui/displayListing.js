@@ -18,7 +18,13 @@ export async function displayListingUi() {
     }
     let { title, tags: tags = [], media: media = [], endsAt, id } = el;
 
-    const time = changeTimeFormat(endsAt);
+    let time = changeTimeFormat(endsAt);
+    const itemDate = new Date(time);
+    const todayDate = new Date();
+
+    if (itemDate >= todayDate) {
+      time = `<i class="fa-solid fa-exclamation"></i> Auction ended`;
+    }
 
     if (media.length === 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
