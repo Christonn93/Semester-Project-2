@@ -162,8 +162,8 @@
               <li class="nav-item bg-theme-beige" role="presentation">
                 <button class="nav-link active text-theme-blue" id="bids-tab" data-bs-toggle="tab" data-bs-target="#bids-tab-pane" type="button" role="tab" aria-controls="bids-tab-pane" aria-selected="true">Your bids</button>
               </li>
-              <li class="nav-item bg-theme-beige" role="presentation">
-                <button class="nav-link text-theme-blue" id="winnings-tab" data-bs-toggle="tab" data-bs-target="#winnings-tab-pane" type="button" role="tab" aria-controls="winnings-tab-pane" aria-selected="false">Your Wins</button>
+              <li class="nav-item bg-opacity-25" role="presentation">
+                <button class="nav-link disabled" id="winnings-tab" data-bs-toggle="tab" data-bs-target="#winnings-tab-pane" type="button" role="tab" aria-controls="winnings-tab-pane" aria-selected="false">Your Wins</button>
               </li>
               <li class="nav-item bg-theme-beige" role="presentation">
                 <button class="nav-link text-theme-blue" id="listings-tab" data-bs-toggle="tab" data-bs-target="#listings-tab-pane" type="button" role="tab" aria-controls="listings-tab-pane" aria-selected="false">Your Listings</button>
@@ -175,7 +175,7 @@
                 <div class="container d-flex gap-2 flex-column">
                   <h2>Your bids</h2>
                   <div class="row gap-3 justify-content-center" id="placedBids">
-                    <p>You have no bids to list here</p>
+                    <p id="empty-bids">You have no bids to list here</p>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@
                 <div class="container d-flex gap-2 flex-column">
                   <h2>Your listings</h2>
                   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="listingItems">
-                    <p>You have no items to list here</p>
+                    <p id="empty-listing">You have no items to list here</p>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                 <div class="container d-flex gap-2 flex-column">
                   <h2>Your Winnings</h2>
                   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="winningsList">
-                    <p>There is no winnings to list here</p>
+                    <p id="empty-winnings">There is no winnings to list here</p>
                   </div>
                 </div>
               </div>

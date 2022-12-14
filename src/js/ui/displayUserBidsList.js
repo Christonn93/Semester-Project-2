@@ -25,5 +25,9 @@ export async function displayUserBids() {
     <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">View item</a>
   </div>`;
     parentElement.append(items);
+
+    if (items) {
+      document.getElementById('empty-bids').classList.add('d-none');
+    }
   });
 }

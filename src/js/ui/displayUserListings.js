@@ -26,6 +26,12 @@ export async function displayUserListingsUi() {
       media = media[0];
     }
 
-    listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
+    const items = displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id);
+
+    listingItemsList.append(items);
+
+    if (items) {
+      document.getElementById('empty-listing').classList.add('d-none');
+    }
   });
 }
