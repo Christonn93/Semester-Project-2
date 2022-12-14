@@ -10,7 +10,7 @@ export async function displaySingleEntryData() {
   const routeName = document.body.id;
   if (routeName == 'singleEntry') {
     const data = await getListings(storageToken, id);
-    // console.log('From singleEntry.js', data);
+    console.log('From singleEntry.js', data);
 
     // Destructing arrays
     const { _count, bids, description, endsAt, media, seller, title } = data;
@@ -46,10 +46,10 @@ export async function displaySingleEntryData() {
 
       // console.log(imageObject);
       const carouselDiv = document.createElement('div');
-      carouselDiv.classList.add('carousel-item', 'ag-carousel');
+      carouselDiv.classList.add('carousel-item', 'ag-carousel', 'image-ratio-2');
 
       const imageEl = document.createElement('img');
-      imageEl.classList.add('d-block', 'w-100', 'm-auto');
+      imageEl.classList.add('image-2');
       if (imageArray.length == 0) {
         imageEl.src = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
       } else {
@@ -59,18 +59,18 @@ export async function displaySingleEntryData() {
       carouselDiv.append(imageEl);
       const parent = document.querySelector('#imageCarousel');
 
-      if (!parent.length < 0) {
-        for (let i = 0; i < parent.children.length; i++) {
-          const child = parent.children[0];
-          child.classList.add('active');
-        }
-      } else {
+      if (imageArray.length == 1) {
         carouselDiv.classList.add('carousel-item', 'ag-carousel', 'active');
         const imageNavBtn1 = document.querySelector('.carousel-control-next');
         const imageNavBtn2 = document.querySelector('.carousel-control-prev');
         imageNavBtn1.classList.add('d-none');
         imageNavBtn2.classList.add('d-none');
-        // console.log("this is showing")
+      } else {
+        for (let i = 0; i < parent.children.length; i++) {
+          const child = parent.children[0];
+          child.classList.add('active');
+        }
+        carouselDiv.classList.add('carousel-item', 'ag-carousel');
       }
 
       imageCarousel.append(carouselDiv);

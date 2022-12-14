@@ -16,8 +16,16 @@ if (form) {
     const data = new FormData(form);
     const title = data.get('title');
     const description = data.get('description');
-    const media = data.get('media').split(', ');
-    const tags = data.get('tags').split(', ');
+    const media = data
+      .get('media')
+      .split(',')
+      .map((media) => media.trim())
+      .slice(0, 8);
+    const tags = data
+      .get('tags')
+      .split(',')
+      .map((tag) => tag.trim())
+      .slice(0, 8);
     const endsAt = data.get('endsAt');
 
     // If the user is updating a posted item
@@ -27,7 +35,6 @@ if (form) {
     // send it to API
     if (!id) {
       await createNewEntry(title, description, media, tags, endsAt);
-      window.location.replace('../');
     } else {
       await updateEntry(title, description, media, tags, endsAt);
       window.location.reload();

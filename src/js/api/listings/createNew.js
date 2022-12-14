@@ -1,5 +1,4 @@
 import * as url from '../constant.js';
-import { uiMessage } from '../../ui/errorHandling.js';
 
 export async function createNewEntry(title, description, media, tags, endsAt) {
   const token = JSON.parse(localStorage.getItem('Token'));
@@ -16,11 +15,17 @@ export async function createNewEntry(title, description, media, tags, endsAt) {
   try {
     const req = await fetch(url.api_base_url + url.createNewListingEndPoint, options);
     if (!req.ok) {
-      uiMessage('error', 'Sorry, we could not proceed with your request. Try again later');
+      console.log(req);
+      let errorContainer = document.getElementById('error');
+      errorContainer.innerHTML = `<p class="text-danger">Ups! Something went wrong. Please try again</p>`;
     } else {
-      return;
+      const errorContainer = document.getElementById('success');
+      errorContainer.innerHTML = `<p class="text-success">Congratulation. Your entry is now listed.</p>`;
+      setTimeout(location.replace('../'), 5000);
     }
-  } catch {
-    uiMessage('error', 'Sorry, we could not proceed with your request. Try again later');
+  } catch (error) {
+    console.log(error);
+    let errorContainer = document.getElementById('error');
+    errorContainer.innerHTML = `<p class="text-danger">Ups! Something went wrong. Please try again</p>`;
   }
 }
