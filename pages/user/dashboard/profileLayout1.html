@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Garage ||</title>
+    <meta name="description" content="Online car and car related items auction. Selling used and new cars and tools. Classic cars, restoration projects etc." />
+    <meta name="keywords" content="auction, cars, classic cars, car tools, used cars, restoration projects, user dashboard" />
+
+    <!-- FavIcon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="../../../dist/css/index.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/af67014470.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="d-flex flex-column flex-fill min-vh-100 gap-4" id="dashboard">
+    <button class="btn btn-theme-beige shadow-lg" id="scrollToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <header class="bg-theme-blue sticky-top">
+      <nav class="navbar bg-theme-blue" id="pageNavigation">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">
+            <img src="../../../src/assets/auction-garage.png" class="ag-logo" />
+          </a>
+          <button class="navbar-toggler border-theme-beige shadow bg-theme-beige" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header bg-theme-blue">
+              <img src="../../../src/assets/auction-garage.png" class="ag-logo" />
+              <button type="button" class="btn-close bg-theme-beige" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-theme-blue d-flex flex-column">
+              <div>
+                <ul class="navbar-nav justify-content-center flex-grow-1">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link active text-theme-beige text-center" aria-current="page" href="/index.html">Home</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link text-theme-beige text-center" href="/pages/listings/index.html">Listing</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link text-theme-beige text-center" href="/pages/about/index.html">About us</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="container mt-auto d-flex gap-3 justify-content-center" id="userOptionBtn">
+                <div>
+                  <button class="btn btn-theme-beige" type="button" data-bs-toggle="modal" data-bs-target="#signInModal" data-bs-dismiss="offcanvas" aria-label="Close">Log in</button>
+                  <button class="btn btn-theme-beige" type="button" data-bs-toggle="modal" data-bs-target="#signUpModal" data-bs-dismiss="offcanvas" aria-label="Close">Sign up</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="userOptionModalContainer">
+          <!-- Modal sign in -->
+          <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signInModalLabel">Sign in</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signInForm">
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="email">Email address</label>
+                      <input class="form-control" type="email" id="email" name="email" pattern="[\w\-.]+@(stud.)?noroff.no" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
+                      <div class="invalid-feedback d-none">Please enter your email address</div>
+                    </div>
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="password">Password</label>
+                      <input class="form-control" name="password" type="password" id="password" placeholder="Password" />
+                      <div class="invalid-feedback d-none">Please enter your password</div>
+                    </div>
+                    <button type="submit" id="signInBtn" class="btn btn-outline-theme-beige">Log in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal sign up -->
+          <div class="modal fade" id="signUpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signUpModalLabel">Sign up</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signUpForm">
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="registerUserName">Username</label>
+                      <input class="form-control" type="text" id="registerUserName" name="registerUserName" placeholder="Username" />
+                      <div class="invalid-feedback d-none">Please enter your Username</div>
+                    </div>
+
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="registerEmail">Email address</label>
+                      <input class="form-control" type="email" id="registerEmail" name="registerEmail" pattern="[\w\-.]+@(stud.)?noroff.no" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
+                      <div class="invalid-feedback d-none">Please enter a valid Email</div>
+                    </div>
+
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="registerPassword">Password</label>
+                      <input class="form-control" type="password" id="registerPassword" name="registerPassword" placeholder="Password" />
+                      <div class="invalid-feedback d-none">Please enter your password</div>
+                    </div>
+
+                    <div class="form-group was-validated">
+                      <label class="form-label text-theme-beige" for="registerUserAvatar">Avatar</label>
+                      <input class="form-control" type="link" id="registerUserAvatar" name="registerUserAvatar" placeholder="Avatar URL" />
+                      <div class="invalid-feedback d-none">Please enter your URL</div>
+                    </div>
+
+                    <div class="form-group was-validated">
+                      <button type="submit" id="signUpBtn" class="btn btn-outline-theme-beige">Sign up</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal sign out -->
+          <div class="modal fade" id="signOutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-theme-blue">
+                <div class="modal-header">
+                  <h5 class="modal-title text-theme-beige" id="signOutModalLabel">Sign in</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signOutForm">
+                    <p class="text-theme-beige"><strong>NB!</strong> Your are about to sign out. Are you sure?</p>
+                    <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Sign out</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-fluid d-flex flex-fill">
+      <div class="container d-flex flex-column flex-lg-row gap-5">
+        <div class="container-fluid container-dashboard-content">
+          <div class="container mb-3">
+            <h1>Welcome back <span id="username"></span></h1>
+          </div>
+
+          <div class="container mt-2">
+            <ul class="nav nav-tabs mb-3 bg-theme-beige" id="myTab" role="tablist">
+              <li class="nav-item bg-theme-beige" role="presentation">
+                <button class="nav-link active text-theme-blue" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Your profile</button>
+              </li>
+              <li class="nav-item bg-theme-beige" role="presentation">
+                <button class="nav-link text-theme-blue" id="bids-tab" data-bs-toggle="tab" data-bs-target="#bids-tab-pane" type="button" role="tab" aria-controls="bids-tab-pane" aria-selected="true">Your bids</button>
+              </li>
+              <li class="nav-item bg-theme-beige" role="presentation">
+                <button class="nav-link text-theme-blue" id="winnings-tab" data-bs-toggle="tab" data-bs-target="#winnings-tab-pane" type="button" role="tab" aria-controls="winnings-tab-pane" aria-selected="false">Your Wins</button>
+              </li>
+              <li class="nav-item bg-theme-beige" role="presentation">
+                <button class="nav-link text-theme-blue" id="listings-tab" data-bs-toggle="tab" data-bs-target="#listings-tab-pane" type="button" role="tab" aria-controls="listings-tab-pane" aria-selected="false">Your Listings</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="container d-flex gap-2 flex-column">
+                  <div class="container d-flex gap-3" id="profileContent">
+                    <div id="profileImage" class="ag-relative"></div>
+                    <div class="container">
+                      <div id="profileName"></div>
+                      <div id="profileDetails" class="d-flex flex-column"></div>
+                    </div>
+                    <div id="createNew"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="bids-tab-pane" role="tabpanel" aria-labelledby="bids-tab" tabindex="0">
+                <div class="container d-flex gap-2 flex-column">
+                  <h2>Your bids</h2>
+                  <div class="row gap-3 justify-content-center" id="placedBids"></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
+                <div class="container d-flex gap-2 flex-column">
+                  <h2>Your listings</h2>
+                  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="listingItems"></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="winnings-tab-pane" role="tabpanel" aria-labelledby="winnings-tab" tabindex="0">
+                <div class="container d-flex gap-2 flex-column">
+                  <h2>Your Winnings</h2>
+                  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="winningsList">
+                    <p>There is no winnings to list here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid bg-theme-blue">
+      <div class="d-flex flex-column justify-content-center gap-4 mt-5">
+        <div class="container-fluid d-flex justify-content-center p-2">
+          <h4 class="text-theme-beige text-center"><a href="/pages/about/index.html" class="nav-link text-theme-beige">About us</a></h4>
+        </div>
+        <div class="container-fluid d-flex align-items-center flex-column p-2" id="ag-supporter">
+          <h3 class="text-theme-beige">Our backend service</h3>
+          <p class="text-theme-beige">This page is using an API delivered by Noroff.</p>
+          <div class="dropdown">
+            <button class="btn btn-theme-beige dropdown-toggle" type="button" id="otherAuctionHouses" data-bs-toggle="dropdown" aria-expanded="false">Other Auction houses</button>
+            <ul class="dropdown-menu" aria-labelledby="otherAuctionHouses" id="otherAuctionHousesList"></ul>
+          </div>
+        </div>
+        <div class="container-fluid d-flex justify-content-center p-2">
+          <div class="ac-footer-text d-flex gap-1 justify-content-center">
+            <i class="fa-solid fa-copyright text-theme-beige p-0 m-0"></i>
+            <p class="text-theme-beige">Copyright Auction Garage 2022</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
