@@ -1,6 +1,6 @@
 {
   "name": "Auction garage",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "This is my semester assignment from Noroff for the second year. We are tasked with creating a design for a auction page. The theme and target audience is a free choice. I decided to go with a car auction page.",
   "main": "index.js",
   "scripts": {
