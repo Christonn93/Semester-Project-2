@@ -10,7 +10,10 @@ export async function displaySingleEntryData() {
   const routeName = document.body.id;
   if (routeName == 'singleEntry') {
     const data = await getListings(storageToken, id);
-    console.log('From singleEntry.js', data);
+
+    if (data) {
+      document.querySelector('.loader').classList.add('d-none');
+    }
 
     // Destructing arrays
     const { _count, bids, description, endsAt, media, seller, title } = data;
@@ -103,8 +106,8 @@ export async function displaySingleEntryData() {
                               `;
         bidList.append(listItem);
       });
+
       if (countBids == 0) {
-        // console.log('something');
         const listItem = document.createElement('tr');
         listItem.classList.add('table-info');
         listItem.innerHTML = `<th scope="row" class="table-info"></th>

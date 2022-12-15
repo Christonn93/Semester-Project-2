@@ -49,16 +49,20 @@ export async function displayListingUi() {
     switch (routeName) {
       case 'homepage':
         if (sortingOfTags == 'car') {
+          document.querySelector('.loader').classList.add('d-none');
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         } else {
+          document.querySelector('.loader').classList.add('d-none');
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         }
         break;
 
       case 'page-listings':
         if (sortingOfTags == 'car') {
+          document.querySelector('.loader').classList.add('d-none');
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         } else {
+          document.querySelector('.loader').classList.add('d-none');
           listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
         }
         break;
