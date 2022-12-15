@@ -4,12 +4,16 @@ const links = [
     link: 'https://auctioneer-sp2.netlify.app/',
   },
   {
-    name: 'find.no',
+    name: 'Find.no',
     link: 'https://auction-chasju.netlify.app/',
   },
   {
     name: 'Forgotten Treasures',
     link: 'https://anclagen.github.io/Semester-Project-2/index.html',
+  },
+  {
+    name: 'Biddable',
+    link: 'https://fluffy-shortbread-738c45.netlify.app/index.html',
   },
 ];
 
