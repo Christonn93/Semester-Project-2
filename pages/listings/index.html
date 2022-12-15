@@ -145,25 +145,25 @@
         </div>
       </nav>
     </header>
-    <main class="container-fluid d-flex flex-fill">
-      <div class="container d-flex">
-        <div class="container-fluid container-dashboard-content">
-          <div class="container bg-theme-beige p-3 card mb-3">
-            <label for="search"><strong>Search listings</strong></label>
-            <input id="search" class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" data-search />
-          </div>
 
-          <div class="container d-flex flex-column gap-3">
-            <div class="container d-flex gap-2 flex-column">
-              <div class="mb-5">
-                <h1>All listings</h1>
-              </div>
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-5 justify-content-center" id="listingItems"></div>
+    <main class="container-fluid d-flex flex-fill flex-lg-row">
+      <div class="container" id="mainContainer">
+        <div class="container bg-theme-beige p-3 card mb-3">
+          <label for="search"><strong>Search listings</strong></label>
+          <input id="search" class="form-control me-2 disabled" type="search" placeholder="Search..." aria-label="Search" data-search />
+        </div>
+
+        <div class="container d-flex flex-column gap-3">
+          <div class="container d-flex gap-2 flex-column">
+            <div class="mb-5">
+              <h1>All listings</h1>
             </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 gy-5 justify-content-center" id="listingItems"></div>
           </div>
         </div>
       </div>
     </main>
+
     <footer class="container-fluid bg-theme-blue">
       <div class="d-flex flex-column justify-content-center gap-4 mt-5">
         <div class="container-fluid d-flex justify-content-center p-2">

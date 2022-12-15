@@ -19,6 +19,15 @@
   padding-right: 0 !important;
 }
 
+/* Reduce text length */
+.reduce-text-length {
+  overflow: hidden;
+  max-width: 75ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Time flag */
 .ag-time {
   position: absolute;
   display: flex;

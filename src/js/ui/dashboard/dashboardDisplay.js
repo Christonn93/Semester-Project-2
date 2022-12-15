@@ -1,5 +1,5 @@
-import { getProfileDetails } from '../api/auth/profile-info.js';
-import { displayFactory, linkFactory, imageFactory } from '../tools/functionFactory.js';
+import { getProfileDetails } from '../../api/auth/profile-info.js';
+import { displayFactory, linkFactory, imageFactory } from '../../tools/functionFactory.js';
 
 export async function displayProfileInformation() {
   await getProfileDetails();

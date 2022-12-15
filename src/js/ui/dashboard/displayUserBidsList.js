@@ -1,7 +1,8 @@
-import { profileBidsFetch } from '../api/fetch/profileBidsFetch.js';
-import { changeTimeFormat } from '../tools/time/changeTime.js';
+import { profileBidsFetch } from '../../api/fetch/profileBidsFetch.js';
+import { changeTimeFormat } from '../../tools/time/changeTime.js';
 
 const parentElement = document.getElementById('placedBids');
+const parentElementEnded = document.getElementById('placedBidsEnded');
 
 export async function displayUserBids() {
   const data = await profileBidsFetch();
@@ -30,10 +31,18 @@ export async function displayUserBids() {
   <div class="container d-flex justify-content-end">
     <a href="/pages/listings/listing-item/index.html?id=${id}" class="btn btn-theme-blue text-center shadow">View item</a>
   </div>`;
-    parentElement.append(items);
 
+    // Checking if listing har ended
+    if (itemDate <= todayDate) {
+      parentElementEnded.append(items);
+    } else {
+      parentElement.append(items);
+    }
+
+    // Checking if there is items. If it is remove the HTML element
     if (items) {
       document.getElementById('empty-bids').classList.add('d-none');
+      document.getElementById('empty-bidsEnded').classList.add('d-none');
     }
   });
 }
