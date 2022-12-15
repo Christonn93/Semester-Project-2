@@ -7,9 +7,18 @@ const parentElementEnded = document.getElementById('placedBidsEnded');
 export async function displayUserBids() {
   const data = await profileBidsFetch();
 
+  for (let i = 0; i < data.length; i++) {
+    const listingDetails = data[i].listing;
+
+    for (let i = 0; i < listingDetails.length; i++) {
+      console.log(listingDetails[i].title);
+    }
+  }
+
   data.forEach((bid) => {
-    const { amount, listing } = bid;
+    const { amount, listing, created } = bid;
     const { title, id, endsAt } = listing;
+    let timeAdded = changeTimeFormat(created);
 
     let time = changeTimeFormat(endsAt);
     const itemDate = new Date(time);
@@ -20,12 +29,16 @@ export async function displayUserBids() {
     }
 
     let items = document.createElement('div');
-    items.classList.add('container', 'card', 'shadow', 'bg-theme-beige', 'flex-lg-row', 'p-2', 'gap-2', 'align-items-center', 'flex-sm-column', 'flex-md-column');
+    items.classList.add('container', 'card', 'shadow', 'bg-theme-beige', 'flex-lg-row', 'p-2', 'gap-2', 'align-items-center', 'flex-sm-column', 'flex-md-column', 'bid-info');
+    items.id = id;
+    items.dataset.created = time;
+    items.dataset.amount = amount;
     items.innerHTML = `<div class="container">
     <h4>${title}</h4>
   </div>
   <div class="container-fluid d-flex flex-column gap-1">
   <span>Bid amount: ${amount} <i class="fa-solid fa-coins"></i></span>
+  <span>Bid added: ${timeAdded}</span>
   <span>Ending at: ${time}</span>
   </div>
   <div class="container d-flex justify-content-end">
