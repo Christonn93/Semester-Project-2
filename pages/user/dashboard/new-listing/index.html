@@ -171,13 +171,17 @@
           </div>
 
           <div class="form-group was-validated mt-2" id="media-input">
-            <label for="media" class="form-label text-theme-blue">Media</label>
+            <label for="media" class="form-label text-theme-blue"
+              >Media <small><i>(separate with ' , ' to add more images)</i></small></label
+            >
             <input type="url" data-type="mediaUrl" class="form-control" placeholder="https://www.example.com/imageUrl.jpg" pattern='(https:\/\/)([^\s(["<,>/]*)(\/)[^\s[",><]*(.png|.jpg)(\?[^\s[",><]*)?' title="Please add one image" name="media" required />
             <div class="invalid-feedback"><p>Please enter valid image url.</p></div>
           </div>
 
           <div class="form-group was-validated mt-2">
-            <label for="tags" class="form-label text-theme-blue">Tags*</label>
+            <label for="tags" class="form-label text-theme-blue"
+              >Tags* <small><i>(separate with ' , ' to add more tags)</i></small></label
+            >
             <input type="text" class="form-control" id="tags" name="tags" placeholder='Tags, separate with ","' />
             <div class="invalid-feedback"><p>Please enter min one tag.</p></div>
           </div>
