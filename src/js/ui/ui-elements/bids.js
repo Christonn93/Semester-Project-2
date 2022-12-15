@@ -22,17 +22,6 @@ export const itemBids = (_count, bid) => {
     bidList.append(listItem);
   }
 
-  // Checking if bids are placed
-  if (countBids === 0) {
-    const listItem = document.createElement('tr');
-    listItem.classList.add('table-info');
-    listItem.innerHTML = `<th scope="row" class="table-info"></th>
-                            <td class="table-info">No bids placed yet! Be the first one to bid on this entry</td>
-                            <td class="table-info"></td>
-                            <td class="table-info"></td>`;
-    bidList.append(listItem);
-  }
-
   // If user is logged in
   if (storageToken) {
     // Sorting out the bids array
@@ -59,5 +48,16 @@ export const itemBids = (_count, bid) => {
                                 `;
       bidList.append(listItem);
     });
+
+    // Checking if bids are placed
+    if (countBids === 0) {
+      const listItem = document.createElement('tr');
+      listItem.classList.add('table-info');
+      listItem.innerHTML = `<th scope="row" class="table-info"></th>
+                            <td class="table-info">No bids placed yet! Be the first one to bid on this entry</td>
+                            <td class="table-info"></td>
+                            <td class="table-info"></td>`;
+      bidList.append(listItem);
+    }
   }
 };

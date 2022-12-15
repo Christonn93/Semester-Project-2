@@ -23,6 +23,8 @@ export async function displaySingleEntryData() {
 
   // Removing loader if there is some data
   if (data) {
+    document.querySelector('title').innerText += title;
+
     itemTitle(title);
     itemSeller(seller);
     itemTime(endsAt);

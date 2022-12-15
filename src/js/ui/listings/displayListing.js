@@ -36,7 +36,7 @@ export async function displayListingUi() {
     }
 
     // Checking media
-    if (media.length === 0) {
+    if (media.length <= 0) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
     } else if (media.status == 403) {
       media = 'https://png.pngitem.com/pimgs/s/287-2876527_uncle-mike-s-qd115-ns-circle-hd-png.png';
