@@ -24,8 +24,9 @@ export async function createNewEntry(title, description, media, tags, endsAt) {
       setTimeout(location.replace('../'), 5000);
     }
   } catch (error) {
-    console.log(error);
     let errorContainer = document.getElementById('error');
     errorContainer.innerHTML = `<p class="text-danger">Ups! Something went wrong. Please try again</p>`;
+
+    throw new Error(error);
   }
 }

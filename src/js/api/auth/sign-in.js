@@ -31,11 +31,15 @@ export class SignIn {
         const profile = new UserProfile(name, avatar, credits, email);
         new Store('Profile', profile);
       } else if (!req.ok) {
-        const errorMessage = document.getElementById('errorNotification');
-        errorMessage.innerHTML = `<p class="text-danger m-0"><strong>UPS</strong> wrong password or email. Check your input again</p>`;
+        const res = await req.json();
+        const message = res.errors[0].message;
+        // HTML element container
+        let errorContainer = document.getElementById('errorContainer-login');
+        errorContainer.innerHTML = `<div class="d-flex flex-column gap-2"><p class="text-danger m-0">Sorry, we could not sign you in.</p> <p class="text-danger m-0">${message}</p></div>`;
+        document.getElementById('signInModal').classList.add('shake');
       }
-    } catch {
-      throw new Error('No no no');
+    } catch (error) {
+      throw new Error(error);
     }
   }
 }

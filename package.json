@@ -16,7 +16,8 @@
     "prepare": "husky install",
     "dev": "vite",
     "vite-build": "vite build",
-    "vite-preview": "vite preview"
+    "vite-preview": "vite preview",
+    "shake-build:raw": "sass src/scss:dist/css"
   },
   "repository": {
     "type": "git",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
+    "csshake": "^1.7.0",
     "dotenv": "^16.0.3",
     "jsdoc": "^3.6.11"
   }

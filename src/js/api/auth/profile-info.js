@@ -23,7 +23,7 @@ export async function getProfileDetails() {
       const profile = new UserProfile(name, avatar, credits, email, listings, wins);
       new Store('Profile', profile);
     }
-  } catch {
-    // Show user a message that they couldn't log in
+  } catch (error) {
+    throw new Error(error);
   }
 }

@@ -12,11 +12,23 @@ export async function placeBidOnEntry(token, id, amount) {
 
   try {
     const req = await fetch(url.api_base_url + `auction/listings/${id}/bids`, options);
-    if (req.ok) {
+    if (!req.ok) {
+      const res = await req.json();
+      const statusCode = res.statusCode;
+      const message = res.errors[0].message;
+      let errorContainer = document.getElementById('errorContainer-bid');
+
+      if (statusCode === 400) {
+        errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
+          <p class="text-danger m-0">Sorry! ${message}</p> 
+        </div>`;
+        document.getElementById('placeBidForm').classList.add('shake', '');
+      }
+    } else {
       const itemData = await req.json();
       return await itemData;
     }
-  } catch {
-    // Show user a message that they couldn't log in
+  } catch (error) {
+    throw new Error(error);
   }
 }

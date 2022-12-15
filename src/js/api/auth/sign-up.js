@@ -13,7 +13,6 @@ export async function registerUser(name, email, password, avatar) {
 
   try {
     const req = await fetch(apiUrl.api_base_url + 'auction/auth/register', options);
-    console.log(req);
     if (req.ok) {
       // Destructuring response object
       const { name, avatar, credits, email } = await req.json();
@@ -22,7 +21,20 @@ export async function registerUser(name, email, password, avatar) {
       const profile = new UserProfile(name, avatar, credits, email);
       new Store('Profile', profile);
     }
-  } catch {
-    return alert('There was a problem creating the user');
+
+    if (!req.ok) {
+      const res = await req.json();
+      let errorContainer = document.getElementById('errorContainer-register');
+
+      if (res.statusCode === 400) {
+        const message = res.errors[0].message;
+        errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
+          <p class="text-danger m-0">Sorry! ${message}</p> 
+        </div>`;
+        document.getElementById('signUpModal').classList.add('shake');
+      }
+    }
+  } catch (error) {
+    throw new Error(error);
   }
 }

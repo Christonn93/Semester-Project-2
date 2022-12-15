@@ -6,8 +6,6 @@ export function signUpUser() {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      console.log('it the right form');
-
       const form = e.target;
       const data = new FormData(form);
       const userName = data.get('registerUserName');
@@ -15,11 +13,7 @@ export function signUpUser() {
       const password = data.get('registerPassword');
       const avatar = data.get('registerUserAvatar');
 
-      let userRegistration = await registerUser(userName, email, password, avatar);
-      if (userRegistration.ok) {
-        window.location.reload();
-        document.querySelector('#signInForm').modal('show');
-      }
+      await registerUser(userName, email, password, avatar);
     });
   }
 }
