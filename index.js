@@ -3,6 +3,7 @@ import * as f from './src/js/index.js';
 // Default UI elements
 f.routerSwitch();
 f.serviceProvider();
+f.loader();
 
 // Display buttons
 f.displayLoggedInButtons();
