@@ -1,6 +1,12 @@
 import { Store } from '../../storage/storage.js';
 import { UserProfile } from '../user/userProfile.js';
 
+/**
+ *
+ * A sign in class.
+ * It also store a userprofile in local storage
+ *
+ */
 export class SignIn {
   constructor(email) {
     this.email = email;

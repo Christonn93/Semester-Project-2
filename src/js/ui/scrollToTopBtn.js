@@ -1,3 +1,6 @@
+/**
+ * A button to scroll back up to the top of the page
+ */
 export const scrollToTop = () => {
   const button = document.getElementById('scrollToTop');
 

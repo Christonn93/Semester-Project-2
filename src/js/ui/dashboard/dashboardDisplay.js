@@ -1,9 +1,9 @@
-import { getProfileDetails } from '../../api/auth/profile-info.js';
 import { displayFactory, linkFactory, imageFactory } from '../../tools/functionFactory.js';
 
+/**
+ * Displaying user profile information
+ */
 export async function displayProfileInformation() {
-  await getProfileDetails();
-
   const storageToken = localStorage.getItem('Token');
   if (storageToken) {
     const profile = JSON.parse(localStorage.getItem('Profile'));

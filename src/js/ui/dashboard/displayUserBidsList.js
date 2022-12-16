@@ -4,6 +4,10 @@ import { changeTimeFormat } from '../../tools/time/changeTime.js';
 const parentElement = document.getElementById('placedBids');
 const parentElementEnded = document.getElementById('placedBidsEnded');
 
+/**
+ * This function creating the display for bids on to the dashboard
+ *
+ */
 export async function displayUserBids() {
   const data = await profileBidsFetch();
 

@@ -2,6 +2,14 @@ import { Store } from '../../storage/storage.js';
 import { UserProfile } from '../user/userProfile.js';
 import * as apiUrl from '../constant.js';
 
+/**
+ * Function to register user.
+ *
+ * @param {*} name Gets name from form inputs
+ * @param {*} email Gets email from form input
+ * @param {*} password Gets password from form inputs
+ * @param {*} avatar Gets avatar url from form inputs
+ */
 export async function registerUser(name, email, password, avatar) {
   const options = {
     method: 'POST',

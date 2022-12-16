@@ -2,6 +2,9 @@ import { Store } from '../../storage/storage.js';
 import { UserProfile } from '../user/userProfile.js';
 import * as apiUrl from '../constant.js';
 
+/**
+ * Function to get profile data from the api
+ */
 export async function getProfileDetails() {
   const storageToken = JSON.parse(localStorage.getItem('Token'));
   const profile = JSON.parse(localStorage.getItem('Profile'));

@@ -23,6 +23,22 @@ export async function profileListingFetch() {
         // console.log('From profileListingFetch.js', data);
         return data;
       }
+
+      if (!req.ok) {
+        const res = await req.json();
+        const statusCode = res.statusCode;
+        const message = res.errors[0].message;
+        let main = document.querySelector('main');
+        let errorContainer = document.createElement('div');
+
+        if (statusCode === 400) {
+          errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
+            <p class="text-danger m-0">Sorry! ${message}</p> 
+          </div>`;
+          document.getElementById('placeBidForm').classList.add('shake', '');
+        }
+        main.append(errorContainer);
+      }
     } catch (error) {
       // If there is some issue with the request this message will display for the user
       console.log('Oh no!!', error.message);

@@ -23,7 +23,19 @@ export async function updateUserAvatar(body) {
   try {
     const req = await fetch(api_base_url + `auction/profiles/${userName}/media`, options);
     if (!req.ok) {
-      uiMessage('error', 'Please add a valid image URL');
+      const res = await req.json();
+      const statusCode = res.statusCode;
+      const message = res.errors[0].message;
+      let main = document.querySelector('main');
+      let errorContainer = document.createElement('div');
+
+      if (statusCode === 400) {
+        errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
+          <p class="text-danger m-0">Sorry! ${message}</p> 
+        </div>`;
+        document.getElementById('placeBidForm').classList.add('shake', '');
+      }
+      main.append(errorContainer);
     } else {
       const userProfile = JSON.parse(localStorage.getItem('Profile'));
       const userName = userProfile.Name;

@@ -1,3 +1,7 @@
+/**
+ * Class to store items in localstorage.
+ * This code I got from Oliver
+ */
 export class Store {
   constructor(key, state, test = false) {
     this.storage = test ? sessionStorage : localStorage;
