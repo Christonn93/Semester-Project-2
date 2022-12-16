@@ -43,7 +43,8 @@ export async function updateUserAvatar(body) {
       userAvatar = body;
       const userCredits = userProfile.Credits;
       const userEmail = userProfile.Email;
-      const profile = new UserProfile(userName, userAvatar, userCredits, userEmail);
+      const userListing = userProfile.listings;
+      const profile = new UserProfile(userName, userAvatar, userCredits, userEmail, userListing);
       new Store('Profile', profile);
       window.location.reload();
     }

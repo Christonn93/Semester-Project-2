@@ -24,6 +24,7 @@ export async function getProfileDetails() {
       // console.log('From profileListingFetch.js', data);
       // Store profile object
       const profile = new UserProfile(name, avatar, credits, email, listings, wins);
+      localStorage.removeItem('Profile');
       new Store('Profile', profile);
     }
   } catch (error) {
