@@ -18,12 +18,12 @@
     </tr>
     <tr>
       <th>Design Prototype</th>
-      <td><a href="https://xd.adobe.com/view/f01735a9-1eb3-4268-a8e8-b937669abc8e-a544/">Desktop Prototype</a> </br>
-      <a href="https://xd.adobe.com/view/ac8cafda-1669-4fc4-811e-7d13144c6203-f9df/">Mobile Prototype</a></td>
+      <td><a href="https://xd.adobe.com/view/86332314-3f35-4ae0-8cff-1c4c1183261d-d360/">Desktop Prototype</a> </br>
+      <a href="hhttps://xd.adobe.com/view/d4fb7744-1648-4362-a14d-445f3494c655-81a8/">Mobile Prototype</a></td>
     </tr>
     <tr>
       <th>Style Guide</th>
-      <td><a href="https://xd.adobe.com/view/ed41b047-9bc1-4037-9576-ad6ae04fa495-b812/screen/27520d4b-aeeb-4c64-91a8-97e26d0b8338">Style Guide</a></td>
+      <td><a href="https://xd.adobe.com/view/69f09dc7-9e38-47c7-940b-56428cee7374-3ca3/">Style Guide</a></td>
     </tr>
     <tr>
       <th>Kanban Board</th>

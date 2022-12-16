@@ -1,4 +1,4 @@
-import { sortAmountAsc } from '../../tools/sorting/arraySorting.js';
+import { sortAmountDsc, sortAmountAsc } from '../../tools/sorting/arraySorting.js';
 import { changeTimeFormat } from '../../tools/time/changeTime.js';
 
 // Defining if token is saved
@@ -25,15 +25,16 @@ export const itemBids = (_count, bid) => {
   // If user is logged in
   if (storageToken) {
     // Sorting out the bids array
-    const sortedBids = sortAmountAsc(bid);
+    const sortedBids = sortAmountDsc(bid);
     const bidData = sortedBids.slice(-3);
+    const sortedBidData = sortAmountAsc(bidData);
 
     // Setting numbers for displaying bids table
     let startNum = 0;
     let num;
 
     // Printing out the return
-    bidData.forEach((bids) => {
+    sortedBidData.forEach((bids) => {
       const { bidderName, amount, created: bidCreated } = bids;
       num = ++startNum;
 

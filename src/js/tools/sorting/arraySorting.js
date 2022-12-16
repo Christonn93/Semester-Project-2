@@ -17,3 +17,18 @@ export function sortAmountAsc(data) {
   });
   return sorted;
 }
+
+export function sortAmountDsc(data) {
+  const sorted = data.sort((a, b) => {
+    const amountA = a.amount;
+    const amountB = b.amount;
+    if (amountA >= amountB) {
+      return 1;
+    }
+    if (amountA <= amountB) {
+      return -1;
+    }
+    return 0;
+  });
+  return sorted;
+}
