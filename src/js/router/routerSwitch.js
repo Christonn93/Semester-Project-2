@@ -9,7 +9,7 @@ export function routerSwitch() {
     // Homepage UI settings
     case 'homepage':
       // Page title
-      document.querySelector('title').innerText = defaultTitle + ` || ` + `Homepage`;
+      document.querySelector('title').innerText = defaultTitle + ` || Homepage`;
       func.userSearch();
       func.displayListingUi();
       break;
