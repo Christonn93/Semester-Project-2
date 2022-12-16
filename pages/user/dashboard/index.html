@@ -67,15 +67,18 @@
                   <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signInForm">
                     <div class="form-group was-validated">
                       <label class="form-label text-theme-beige" for="email">Email address</label>
-                      <input class="form-control" type="email" id="email" name="email" pattern="[\w\-.]+@(stud.)?noroff.no" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
-                      <div class="invalid-feedback d-none">Please enter your email address</div>
+                      <input class="form-control" type="email" id="email" name="email" pattern="[\w\-.]+@(stud.)?noroff.no" placeholder="Email" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
+                      <div class="invalid-feedback">Please enter your email address</div>
                     </div>
                     <div class="form-group was-validated">
                       <label class="form-label text-theme-beige" for="password">Password</label>
-                      <input class="form-control" name="password" type="password" id="password" placeholder="Password" />
-                      <div class="invalid-feedback d-none">Please enter your password</div>
+                      <input class="form-control" name="password" type="password" id="password" placeholder="Password" minlength="5" maxlength="10" title="Password need to be at least 5 characters long" required />
+                      <div class="invalid-feedback">Please enter your password</div>
                     </div>
-                    <button type="submit" id="signInBtn" class="btn btn-outline-theme-beige">Log in</button>
+                    <div class="form-group mt-2">
+                      <button type="submit" id="signInBtn" class="btn btn-outline-theme-beige">Log in</button>
+                      <div id="errorContainer-login" class="p-2"></div>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -94,30 +97,34 @@
                   <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signUpForm">
                     <div class="form-group was-validated">
                       <label class="form-label text-theme-beige" for="registerUserName">Username</label>
-                      <input class="form-control" type="text" id="registerUserName" name="registerUserName" placeholder="Username" />
-                      <div class="invalid-feedback d-none">Please enter your Username</div>
+                      <input class="form-control" type="text" id="registerUserName" name="registerUserName" placeholder="Username" pattern="^[\w]+$" minlength="5" maxlength="10" title="Username need to be at least 5 characters long" required />
+                      <div class="invalid-feedback">Please enter your Username</div>
                     </div>
 
                     <div class="form-group was-validated">
                       <label class="form-label text-theme-beige" for="registerEmail">Email address</label>
-                      <input class="form-control" type="email" id="registerEmail" name="registerEmail" pattern="[\w\-.]+@(stud.)?noroff.no" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
-                      <div class="invalid-feedback d-none">Please enter a valid Email</div>
+                      <input class="form-control" type="email" id="registerEmail" name="registerEmail" pattern="[\w\-.]+@(stud.)?noroff.no" placeholder="Email" title='You can only log in with a valid email that ends with "@noroff.no" or "@stud.noroff.no' required />
+                      <div class="invalid-feedback">Please enter a valid Email</div>
                     </div>
 
                     <div class="form-group was-validated">
                       <label class="form-label text-theme-beige" for="registerPassword">Password</label>
-                      <input class="form-control" type="password" id="registerPassword" name="registerPassword" placeholder="Password" />
-                      <div class="invalid-feedback d-none">Please enter your password</div>
+                      <input class="form-control" type="password" id="registerPassword" name="registerPassword" placeholder="Password" minlength="5" maxlength="10" title="Password need to be at least 5 characters long" required />
+                      <div class="invalid-feedback">Please enter your password</div>
                     </div>
 
                     <div class="form-group was-validated">
-                      <label class="form-label text-theme-beige" for="registerUserAvatar">Avatar</label>
-                      <input class="form-control" type="link" id="registerUserAvatar" name="registerUserAvatar" placeholder="Avatar URL" />
-                      <div class="invalid-feedback d-none">Please enter your URL</div>
+                      <label class="form-label text-theme-beige" for="registerUserAvatar">Avatar* </label>
+                      <input class="form-control" type="url" id="registerUserAvatar" name="registerUserAvatar" placeholder="https://www.example.com/imageUrl.jpg" pattern='(https:\/\/)([^\s(["<,>/]*)(\/)[^\s[",><]*(.png|.jpg)(\?[^\s[",><]*)?' />
+                      <div class="invalid-feedback">Please enter your URL</div>
                     </div>
 
-                    <div class="form-group was-validated">
+                    <div class="form-group mt-2">
                       <button type="submit" id="signUpBtn" class="btn btn-outline-theme-beige">Sign up</button>
+                      <p class="text-theme-beige mt-1">
+                        <i><small class="text-theme-beige">*Not required</small></i>
+                      </p>
+                      <div id="errorContainer-register" class="p-2"></div>
                     </div>
                   </form>
                 </div>
@@ -136,7 +143,7 @@
                 <div class="modal-body">
                   <form class="d-flex flex-column gap-2 p-2 bg-theme-blue" id="signOutForm">
                     <p class="text-theme-beige"><strong>NB!</strong> Your are about to sign out. Are you sure?</p>
-                    <button type="submit" id="signOutBtn" class="btn btn-outline-danger">Sign out</button>
+                    <button type="button" id="signOutBtn" class="btn btn-outline-danger text-white">Sign out</button>
                   </form>
                 </div>
               </div>

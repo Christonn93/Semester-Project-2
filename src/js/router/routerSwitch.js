@@ -11,7 +11,7 @@ export function routerSwitch() {
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || Homepage`;
       func.userSearch();
-      func.displayListingUi();
+      func.displayCard();
       break;
 
     // Profile UI settings
@@ -55,7 +55,7 @@ export function routerSwitch() {
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `Listings`;
       func.userSearch();
-      func.displayListingUi();
+      func.displayCard();
       break;
 
     // 404 UI settings

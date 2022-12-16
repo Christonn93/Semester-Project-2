@@ -1,6 +1,6 @@
 import { profileListingFetch } from '../../api/fetch/profileListingFetch.js';
 import { changeTimeFormat } from '../../tools/time/changeTime.js';
-import { displayListingFactory } from '../../tools/displayListingFactory.js';
+import { htmlCards } from '../../../template/card.mjs';
 
 const userToken = localStorage.getItem('Token');
 const listingItemsList = document.getElementById('listingItems');
@@ -9,7 +9,7 @@ const listingItemsEnded = document.getElementById('listingItemsEnded');
 export async function displayUserListingsUi() {
   const data = await profileListingFetch();
   if (!userToken) {
-    window.location.replace('/index.html');
+    location.replace('/index.html');
   }
 
   const dataListing = data.listings;
@@ -42,13 +42,13 @@ export async function displayUserListingsUi() {
       media = media[0];
     }
 
-    const items = displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id);
+    const items = htmlCards(title, media, time, tags, id);
 
     // Checking date and appending items in the right containers
     if (itemDate <= todayDate) {
-      listingItemsEnded.append(items);
+      listingItemsEnded.innerHTML += items;
     } else {
-      listingItemsList.append(items);
+      listingItemsList.innerHTML += items;
       listingItemsList.classList.remove('justify-content-center');
     }
 

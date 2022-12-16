@@ -1,23 +1,19 @@
 import { getListings } from '../../api/fetch/listings.js';
 import { changeTimeFormat } from '../../tools/time/changeTime.js';
-import { displayListingFactory } from '../../tools/displayListingFactory.js';
+import { htmlCards } from '../../../template/card.mjs';
 
-export async function displayListingUi() {
-  const data = await getListings();
-  function tagSorting() {
-    const tags = data.flatMap((obj) => obj.tags);
-    return tags;
-  }
-
-  const sortingOfTags = tagSorting();
+export const displayCard = async () => {
+  const myData = await getListings();
   const listingItemsList = document.getElementById('listingItems');
 
-  data.forEach((el) => {
-    if (el.length < 10) {
-      return;
-    }
-    let { title, tags: tags = [], media: media = [], endsAt, id } = el;
+  if (myData) {
+    document.querySelector('.loader').classList.add('d-none');
+  }
 
+  myData.forEach((e) => {
+    let { title, media, endsAt, tags, id } = e;
+
+    // Changing the time
     let time = changeTimeFormat(endsAt);
     const itemDate = new Date(time);
     const todayDate = new Date();
@@ -44,28 +40,8 @@ export async function displayListingUi() {
       media = media[0];
     }
 
-    // Switch for displaying cards
-    const routeName = document.body.id;
-    switch (routeName) {
-      case 'homepage':
-        if (sortingOfTags == 'car') {
-          document.querySelector('.loader').classList.add('d-none');
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
-        } else {
-          document.querySelector('.loader').classList.add('d-none');
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
-        }
-        break;
-
-      case 'page-listings':
-        if (sortingOfTags == 'car') {
-          document.querySelector('.loader').classList.add('d-none');
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
-        } else {
-          document.querySelector('.loader').classList.add('d-none');
-          listingItemsList.append(displayListingFactory('div', ['col', 'entry-items'], `listingId=${id}`, media, title, tags, time, id));
-        }
-        break;
-    }
+    const item = htmlCards(title, media, time, tags, id);
+    listingItemsList.innerHTML += item;
+    return;
   });
-}
+};

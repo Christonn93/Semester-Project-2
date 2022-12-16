@@ -20,15 +20,13 @@ const id = urlParams.searchParams.get('id');
 export async function displaySingleEntryData() {
   // Receiving the required data
   const data = await getSingleListing(storageToken, id);
-  console.log(data);
+  // console.log(data);
 
   // Destructing arrays
   const { _count, bids, description, endsAt, media, seller, title } = data;
 
   // Removing loader if there is some data
   if (data) {
-    document.getElementById('singleEntry').innerText += title;
-
     itemTitle(title);
     itemSeller(seller);
     itemTime(endsAt);
@@ -39,15 +37,13 @@ export async function displaySingleEntryData() {
   }
 
   if (!data.ok) {
-    const res = await data.json();
-    const statusCode = res.statusCode;
-    const message = res.errors[0].message;
+    const statusCode = data.statusCode;
     let main = document.querySelector('main');
     let errorContainer = document.createElement('div');
 
     if (statusCode === 400) {
       errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
-        <p class="text-danger m-0">Sorry! ${message}</p> 
+        <p class="text-danger m-0">Sorry! Something is wrong here.. Please reload the page</p> 
       </div>`;
       document.getElementById('placeBidForm').classList.add('shake', '');
     }

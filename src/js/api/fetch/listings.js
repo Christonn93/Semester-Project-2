@@ -20,17 +20,17 @@ export async function getListings() {
     let req = await fetch(url.api_base_url + url.listingEndPoint, options);
 
     if (routeName == 'homepage') {
-      req = await fetch(url.api_base_url + url.listingEndPoint + '&limit=12&active=true', options);
+      req = await fetch(url.api_base_url + url.listingEndPoint + '&limit=12', options);
     }
 
+    let res;
     if (req.ok) {
-      const data = await req.json();
-      // console.log('From listings.js', data);
-      return data;
+      res = await req.json();
+      return res;
     }
 
     if (!req.ok) {
-      const res = await req.json();
+      res = await req.json();
       const statusCode = res.statusCode;
       const message = res.errors[0].message;
       let main = document.querySelector('main');

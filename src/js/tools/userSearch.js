@@ -21,11 +21,13 @@ export async function userSearch() {
           isVisible = item.title.toLowerCase().includes(value) || item.description.toLowerCase().includes(value);
           if (listItems) {
             listItems.classList.toggle('d-none', !isVisible);
+            document.querySelector('.loader').classList.add('d-none');
           }
         } else {
           isVisible = item.title.toLowerCase().includes(value);
           if (listItems) {
             listItems.classList.toggle('d-none', !isVisible);
+            document.querySelector('.loader').classList.add('d-none');
           }
         }
       });
