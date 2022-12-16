@@ -9,7 +9,7 @@ export async function displayProfileInformation() {
   const storageToken = localStorage.getItem('Token');
   if (storageToken) {
     const profile = JSON.parse(localStorage.getItem('Profile'));
-    const { Name: username, Avatar: imageUrl, Credits: credits, Email: email, listings, Wins: wins } = profile;
+    const { Name: username, Avatar: imageUrl, Credits: credits, Email: email, Listings, Wins: wins } = profile;
 
     const user = document.querySelector('#profileContent');
     if (user) {
@@ -25,7 +25,7 @@ export async function displayProfileInformation() {
       const displayUserEmail = displayFactory('span', ['text-black', 'mb-3'], 'userEmail', `<a href="mailto:${email}" target="_blank" class="link-success text-decoration-none"><i class="fa-solid fa-envelope"></i> Contact<a/>`);
 
       // Display user listings
-      let displayUserListingAmount = displayFactory('span', ['text-black', 'mb-3'], '', `<i class="fa-solid fa-list"></i> ${listings.length}`);
+      let displayUserListingAmount = displayFactory('span', ['text-black', 'mb-3'], '', `<i class="fa-solid fa-list"></i> ${Listings.length}`);
 
       // Display win and win amount
       let displayWinAmount = displayFactory('span', ['text-black', 'mb-3'], '', `<i class="fa-solid fa-handshake"></i> ${wins.length}`);

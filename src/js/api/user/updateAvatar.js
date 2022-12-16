@@ -1,15 +1,12 @@
 import { Store } from '../../storage/storage.js';
 import { UserProfile } from '../user/userProfile.js';
 import { api_base_url } from '../constant.js';
-import { uiMessage } from '../../ui/errorHandling.js';
 
 export async function updateUserAvatar(body) {
   const token = JSON.parse(localStorage.getItem('Token'));
   console.log(token);
   const userProfile = JSON.parse(localStorage.getItem('Profile'));
   const userName = userProfile.Name;
-  console.log(userName);
-  console.log(userProfile);
 
   const options = {
     method: 'PUT',
@@ -43,12 +40,14 @@ export async function updateUserAvatar(body) {
       userAvatar = body;
       const userCredits = userProfile.Credits;
       const userEmail = userProfile.Email;
-      const userListing = userProfile.listings;
-      const profile = new UserProfile(userName, userAvatar, userCredits, userEmail, userListing);
+      const userListing = userProfile.Listings;
+      const userWins = userProfile.Wins;
+      const profile = new UserProfile(userName, userAvatar, userCredits, userEmail, userListing, userWins);
+      localStorage.clear('Profile');
       new Store('Profile', profile);
-      window.location.reload();
+      location.reload();
     }
-  } catch {
-    uiMessage('error', 'Please add a valid image URL');
+  } catch (error) {
+    throw new Error(error);
   }
 }

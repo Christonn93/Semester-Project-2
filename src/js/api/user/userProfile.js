@@ -4,7 +4,7 @@ export class UserProfile {
     this.Avatar = avatar;
     this.Credits = credits;
     this.Email = email;
-    this.listings = listings;
+    this.Listings = listings;
     this.Wins = wins;
   }
 
