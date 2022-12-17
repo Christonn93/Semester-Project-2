@@ -21,7 +21,6 @@ export function routerSwitch() {
       func.displayProfileInformation();
       func.displayUserListingsUi();
       func.displayUserBids();
-      func.userAvatarUpdate();
       break;
 
     // New entry UI settings
