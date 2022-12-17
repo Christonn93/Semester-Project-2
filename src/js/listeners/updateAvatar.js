@@ -1,18 +1,22 @@
 import { updateUserAvatar } from '../api/user/updateAvatar.js';
+import { sendError } from '../ui/apiError.js';
 
 export function userAvatarUpdate() {
-  const updateForm = document.querySelector('#userAvatarUpdate');
-  if (updateForm) {
-    updateForm.addEventListener('submit', (e) => {
+  let form = document.getElementById('userAvatarUpdate');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const form = e.target;
-      const data = new FormData(form);
-      const avatarUrl = data.get('userAvatarInput');
+      let form = e.target;
+      let data = new FormData(form);
+      let avatar = data.get('userAvatarInput');
 
-      if (avatarUrl) {
-        updateUserAvatar(avatarUrl);
-        console.log(avatarUrl);
+      let profile = localStorage.get('Profile');
+      console.log(profile);
+      await updateUserAvatar(avatar);
+
+      if (!avatar) {
+        await sendError(avatar);
       }
     });
   }

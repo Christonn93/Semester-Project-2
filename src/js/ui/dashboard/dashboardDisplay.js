@@ -43,22 +43,22 @@ export async function displayProfileInformation() {
        </button>
        
        <!-- Modal -->
-       <div class="modal fade" id="avatarUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal fade" id="avatarUpdateModal" tabindex="-1" aria-labelledby="avatarUpdateModalLabel" aria-hidden="true">
          <div class="modal-dialog ">
            <div class="modal-content bg-theme-blue">
              <div class="modal-header">
-               <h1 class="modal-title fs-5 text-theme-beige" id="exampleModalLabel">Update user avatar</h1>
+               <h1 class="modal-title fs-5 text-theme-beige" id="avatarUpdateModalLabel">Update user avatar</h1>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body">
                <form class="d-flex flex-column gap-2 p-2 needs-validation" id="userAvatarUpdate">
-                 <div class="form-group needs-validation">
-                   <label class="form-label text-theme-beige" for="userAvatarInput">User avatar URL</label>
-                   <input class="form-control" type="link" id="userAvatarInput" name="userAvatarInput" />
-                   <div class="invalid-feedback d-none">Please enter a valid URL</div>
-                 </div>
+               <div class="form-group was-validated">
+               <label class="form-label text-theme-beige" for="userAvatarInput">Avatar* </label>
+               <input class="form-control" type="url" name="userAvatarInput" placeholder="https://www.example.com/imageUrl.jpg" required/>
+               <div class="invalid-feedback">Please enter your URL</div>
+             </div>
                  <div class="form-group">
-                 <button class="btn btn-outline-theme-beige" type="submit">Submit form</button>
+                 <button class="btn btn-outline-theme-beige" id="submitUserAvatar">Submit form</button>
                  </div>
                </form>
              </div>

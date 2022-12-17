@@ -1,12 +1,11 @@
-import { Store } from '../../storage/storage.js';
-import { UserProfile } from '../user/userProfile.js';
+// import { Store } from '../../storage/storage.js';
+// import { UserProfile } from '../user/userProfile.js';
 import { api_base_url } from '../constant.js';
+import { sendError } from '../../ui/apiError.js';
 
-export async function updateUserAvatar(body) {
-  const token = JSON.parse(localStorage.getItem('Token'));
-  console.log(token);
-  const userProfile = JSON.parse(localStorage.getItem('Profile'));
-  const userName = userProfile.Name;
+export const updateUserAvatar = async (body) => {
+  let token = JSON.parse(localStorage.getItem('Token'));
+  let userProfile = JSON.parse(localStorage.getItem('Profile'));
 
   const options = {
     method: 'PUT',
@@ -18,36 +17,17 @@ export async function updateUserAvatar(body) {
   };
 
   try {
-    const req = await fetch(api_base_url + `auction/profiles/${userName}/media`, options);
-    if (!req.ok) {
-      const res = await req.json();
-      const statusCode = res.statusCode;
-      const message = res.errors[0].message;
-      let main = document.querySelector('main');
-      let errorContainer = document.createElement('div');
+    const req = await fetch(api_base_url + `auction/profiles/${userProfile.Name}/media`, options);
+    const res = await req.json();
 
-      if (statusCode === 400) {
-        errorContainer.innerHTML = `<div class="d-flex flex-column gap-2">
-          <p class="text-danger m-0">Sorry! ${message}</p> 
-        </div>`;
-        document.getElementById('placeBidForm').classList.add('shake', '');
-      }
-      main.append(errorContainer);
+    if (!res.ok) {
+      await sendError(req);
     } else {
-      const userProfile = JSON.parse(localStorage.getItem('Profile'));
-      const userName = userProfile.Name;
-      let userAvatar = userProfile.Avatar;
-      userAvatar = body;
-      const userCredits = userProfile.Credits;
-      const userEmail = userProfile.Email;
-      const userListing = userProfile.Listings;
-      const userWins = userProfile.Wins;
-      const profile = new UserProfile(userName, userAvatar, userCredits, userEmail, userListing, userWins);
-      localStorage.clear('Profile');
-      new Store('Profile', profile);
+      // Do something
       location.reload();
     }
   } catch (error) {
+    // Sending new error if something is wrong with the fetch
     throw new Error(error);
   }
-}
+};

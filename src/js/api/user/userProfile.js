@@ -7,8 +7,4 @@ export class UserProfile {
     this.Listings = listings;
     this.Wins = wins;
   }
-
-  display() {}
-
-  updateAvatar() {}
 }

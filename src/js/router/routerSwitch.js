@@ -19,9 +19,9 @@ export function routerSwitch() {
       // Page title
       document.querySelector('title').innerText = defaultTitle + ` || ` + `Dashboard`;
       func.displayProfileInformation();
-      func.userAvatarUpdate();
       func.displayUserListingsUi();
       func.displayUserBids();
+      func.userAvatarUpdate();
       break;
 
     // New entry UI settings
