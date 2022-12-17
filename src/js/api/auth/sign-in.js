@@ -1,5 +1,5 @@
 import { Store } from '../../storage/storage.js';
-import { UserProfile } from '../user/userProfile.js';
+import { UserProfile } from '../../classes/userProfile.js';
 
 /**
  *

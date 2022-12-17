@@ -1,5 +1,4 @@
-import { updateUserAvatar } from '../api/user/updateAvatar.js';
-import { sendError } from '../ui/apiError.js';
+import { updateUserAvatar } from '../api/fetch/updateAvatar.js';
 import { Store } from '../storage/storage.js';
 
 export const userAvatarUpdate = () => {
@@ -16,13 +15,7 @@ export const userAvatarUpdate = () => {
       let newProfile = { ...profile, Avatar: avatar };
       new Store('Profile', newProfile);
 
-      if (newProfile) {
-        await updateUserAvatar(avatar);
-      }
-
-      if (!avatar) {
-        await sendError(avatar);
-      }
+      await updateUserAvatar({ avatar: avatar });
     });
   }
 };
