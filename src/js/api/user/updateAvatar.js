@@ -18,13 +18,11 @@ export const updateUserAvatar = async (body) => {
 
   try {
     const req = await fetch(api_base_url + `auction/profiles/${userProfile.Name}/media`, options);
-    const res = await req.json();
-
-    if (!res.ok) {
+    if (!req.ok) {
+      const res = await req.json();
       await sendError(res.errors[0].message);
     } else {
       // Do something
-      console.log(res);
       // location.reload();
     }
   } catch (error) {
