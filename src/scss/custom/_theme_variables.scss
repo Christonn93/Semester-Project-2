@@ -3,7 +3,8 @@
 // Theme colors
 $theme-blue: #232c3d;
 $theme-beige: #dcd3c2;
-$theme-danger: #77181f;
+$theme-danger: #dc3545;
+$theme-disabled: #494f55;
 
 // Changing bootstrap colors
 $primary: #00ff4c;
@@ -11,13 +12,15 @@ $secondary: #505059;
 $success: #0c8410;
 $info: #0dcaf0;
 $warning: #ffc107;
-$danger: #dc3545;
+$danger: #ea818b;
 $light: #f8f9fa;
 $dark: #212529;
 
 $custom-colors: (
   'theme-blue': $theme-blue,
   'theme-beige': $theme-beige,
+  'theme-disabled': $theme-disabled,
+  'theme-danger': $theme-danger,
 );
 
 $theme-colors: (

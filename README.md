@@ -8,12 +8,8 @@
 
 1. [Project Brief](#project-brief)
 2. [User stories](#user-stories)
-3. [Tools used](#tools-used)
+3. [Project information](#project-information)
 4. [Setting up](#setting-up)
-    4.1 [Option 1](#option-1)
-    4.2 [Option 2](#option-2)
-    4.3 [Option 3](#option-3)
-    4.4 [Starting the project](#starting-the-project)
 5. [Hosting](#hosting)
 6. [Contributing](#contributing)
 7. [License](#license)
@@ -47,7 +43,9 @@ The project covers these user stories;
 
 ------
 
-## Tools used
+## Project information
+
+### Created with
 
 - HTML 5
 - Sass
@@ -58,6 +56,65 @@ The project covers these user stories;
 ### Designed in
 
 - Adobe XD (link to style tile and prototype at the end of the readme)
+
+### Dependencies
+
+```json
+"bootstrap": "^5.2.2",
+"csshake": "^1.7.0",
+"dotenv": "^16.0.3",
+"jsdoc": "^3.6.11"
+```
+
+</br>
+
+### Dev dependencies
+
+```json
+  "@babel/core": "^7.19.3",
+  "@babel/preset-env": "^7.19.4",
+  "cypress": "^10.11.0",
+  "eslint": "^8.26.0",
+  "eslint-plugin-cypress": "^2.12.1",
+  "eslint-plugin-jest": "^27.1.4",
+  "husky": "^8.0.1",
+  "jest": "^29.2.0",
+  "lint-staged": "^13.0.3",
+  "prettier": "^2.7.1",
+  "sass": "^1.55.0",
+  "vite": "^3.2.3"
+```
+
+</br>
+
+### Terminal scripts
+
+Each script can be runes by `npm run *script name*`
+
+```json
+"test": "npm run test-unit && npm run test-e2e-cli",
+"test-unit": "jest",
+"test-e2e": "cypress open",
+"test-e2e-cli": "cypress run",
+"format": "prettier -w src/**/*.js",
+"lint": "eslint src/**/*.js",
+"lint-fix": "eslint src/**/*.js --cache --fix",
+"build": "sass src/scss:dist/css",
+"start": "sass --watch src/scss:dist/css & vite",
+"prepare": "husky install",
+"dev": "vite",
+"vite-build": "vite build",
+"vite-preview": "vite preview",
+"shake-build:raw": "sass src/scss:dist/css"
+```
+
+</br>
+
+Command used to add, commit, push and update version
+
+```md
+git add . && git commit && git push && npm version patch
+```
 
 ------
 
