@@ -87,7 +87,7 @@ This project is licensed under a Creative Commons license. It is open for contri
     <tr>
       <th>Design Prototype</th>
       <td><a href="https://xd.adobe.com/view/86332314-3f35-4ae0-8cff-1c4c1183261d-d360/">Desktop Prototype</a> </br>
-      <a href="hhttps://xd.adobe.com/view/d4fb7744-1648-4362-a14d-445f3494c655-81a8/">Mobile Prototype</a></td>
+      <a href="https://xd.adobe.com/view/d4fb7744-1648-4362-a14d-445f3494c655-81a8/">Mobile Prototype</a></td>
     </tr>
     <tr>
       <th>Style Guide</th>
