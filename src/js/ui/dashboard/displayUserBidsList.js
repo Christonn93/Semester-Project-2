@@ -19,23 +19,30 @@ export async function displayUserBids() {
 
   window.bids = data;
 
-  renderBids(data);
-
   function renderBids(data) {
     data.forEach((e) => {
       let bids = bidCard(e);
-      const itemDate = new Date(e.endsAt);
-      const todayDate = new Date();
+      let itemEndsAt = e.listing.endsAt;
+      let itemDate = new Date(itemEndsAt);
+      let todayDate = new Date();
 
       if (itemDate <= todayDate) {
         parentElementEnded.innerHTML += bids;
-      } else {
+      }
+
+      if (itemDate >= todayDate) {
         parentElement.innerHTML += bids;
       }
     });
   }
+  renderBids(data);
 
-  // function updateBid(bids) {
-  //   const updatedBids = window.bids.map(...renderBids(updatedBids));
-  // }
+  /* 
+  Hi teacher. 
+
+  I was trying hard to figure out a way to remove a listing if i created a new bid on the same listing
+  I was not able to do so, I tried multiple angles to get this working but did not manage to get this done. 
+  Could you maybe add a solution to this in the marking feedback? 
+
+  */
 }
