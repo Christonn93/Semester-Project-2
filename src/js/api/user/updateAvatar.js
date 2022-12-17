@@ -21,10 +21,11 @@ export const updateUserAvatar = async (body) => {
     const res = await req.json();
 
     if (!res.ok) {
-      await sendError(req);
+      await sendError(res.errors[0].message);
     } else {
       // Do something
-      location.reload();
+      console.log(res);
+      // location.reload();
     }
   } catch (error) {
     // Sending new error if something is wrong with the fetch
