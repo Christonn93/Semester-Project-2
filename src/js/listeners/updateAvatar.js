@@ -1,6 +1,5 @@
 import { updateUserAvatar } from '../api/user/updateAvatar.js';
 import { sendError } from '../ui/apiError.js';
-import { sendSuccess } from '../ui/apiSuccess.js';
 import { Store } from '../storage/storage.js';
 
 export const userAvatarUpdate = () => {
@@ -18,7 +17,6 @@ export const userAvatarUpdate = () => {
       new Store('Profile', newProfile);
 
       if (newProfile) {
-        sendSuccess('Congratulation! You have updated your avatar');
         await updateUserAvatar(avatar);
       }
 
