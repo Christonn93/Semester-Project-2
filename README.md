@@ -21,18 +21,15 @@ The project covers these user stories;
 
 ## Built With
 
-<img src="https://skillicons.dev/icons?i=html,sass,js,bootstrap"/>
-
 - HTML 5
 - Sass
 - Bootstrap
 - JavaScript
+- Noroff Auction API
 
 ### Designed in
 
-<img src="https://skillicons.dev/icons?i=xd"/>
-
-- Adobe XD
+- Adobe XD (link to style tile and prototype at the end of the readme)
 
 ## Getting Started
 
@@ -82,7 +79,7 @@ If you experience any errors feel free to add issues or open up a pull request w
 
 ## License
 
-This project is licensed under a Creative Commons license. It is open for contributions, but please credit the project if you use the code in your own projects.
+This project is licensed under a Creative Commons license. It is open for contributions, but please credit the project if you use the code in your projects.
 
 ## Required Links
 
