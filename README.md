@@ -38,25 +38,39 @@ The project covers these user stories;
 
 1. Download and extract the zip file or clone the project in the command line from your preferred editor.
 
-```md
-git clone https://github.com/Christonn93/Semester-Project-2.git
-```
+    ```md
+    git clone https://github.com/Christonn93/Semester-Project-2.git
+    ```
 
-Then install dependencies with:
+2. Install dependencies with:
 
-```md
-npm i
-```
+    ```md
+    npm i
+    ```
 
-and compile the SCC using:
+3. Build page:
 
-```md
-npm run start
-```
+    ```md
+    npm run build
+    ```
+
+4. View with Vite local server:
+
+    ```md
+    npm run dev
+    ```
+
+    This will open the option to view the page in the browser at: [http://127.0.0.1:5173](http://127.0.0.1:5173)
+
+5. Watch changes to the style with:
+
+   ```md
+   npm run start
+   ```
 
 ### Hosting
 
-The project is configured to run on GitHub pages using the provided workflow. For hosting else where further configuration will be required to import the Bootstrap JS either through a bundler or by replacing the bootstrap node modules script link with the CDN link.
+This project is using GitHub action to display the page on a [subdomain](https://auction-garage.christopher-tonnesland.no/). It will automatically push update the live site on push to main.
 
 #### Contributing
 
@@ -82,24 +96,24 @@ This project is licensed under a Creative Commons license. It is open for contri
   <tbody>
     <tr>
       <th>Gantt Chart</th>
-      <td><a href="https://docs.google.com/spreadsheets/d/1RwCNmC_BN5C3aZQhcwQwrIr3TtHjmNffUgCBWtsMbDE/edit#gid=0">Gantt Chart google sheets</a></td>
+      <td><a href="https://docs.google.com/spreadsheets/d/1RwCNmC_BN5C3aZQhcwQwrIr3TtHjmNffUgCBWtsMbDE/edit#gid=0" target="_blank">Gantt Chart google sheets</a></td>
     </tr>
     <tr>
       <th>Design Prototype</th>
-      <td><a href="https://xd.adobe.com/view/86332314-3f35-4ae0-8cff-1c4c1183261d-d360/">Desktop Prototype</a> </br>
-      <a href="https://xd.adobe.com/view/d4fb7744-1648-4362-a14d-445f3494c655-81a8/">Mobile Prototype</a></td>
+      <td><a href="https://xd.adobe.com/view/86332314-3f35-4ae0-8cff-1c4c1183261d-d360/" target="_blank">Desktop Prototype</a> </br>
+      <a href="https://xd.adobe.com/view/d4fb7744-1648-4362-a14d-445f3494c655-81a8/" target="_blank">Mobile Prototype</a></td>
     </tr>
     <tr>
       <th>Style Guide</th>
-      <td><a href="https://xd.adobe.com/view/69f09dc7-9e38-47c7-940b-56428cee7374-3ca3/">Style Guide</a></td>
+      <td><a href="https://xd.adobe.com/view/69f09dc7-9e38-47c7-940b-56428cee7374-3ca3/" target="_blank">Style Guide</a></td>
     </tr>
     <tr>
       <th>Kanban Board</th>
-      <td><a href="https://trello.com/invite/b/q1EZUyWP/ATTIe5fafbf1bc039f6d13382af9f3fb385aE35FAE4F/semester-project">Project Board Link</a></td>
+      <td><a href="https://trello.com/invite/b/q1EZUyWP/ATTIe5fafbf1bc039f6d13382af9f3fb385aE35FAE4F/semester-project" target="_blank">Project Board Link</a></td>
     </tr>
     <tr>
       <th>Repository</th>
-      <td><a href="https://github.com/Christonn93/Semester-Project-2">Project Repository</a></td>
+      <td><a href="https://github.com/Christonn93/Semester-Project-2" target="_blank">Project Repository</a></td>
     </tr>
     <tr>
       <th>Hosted Demo</th>

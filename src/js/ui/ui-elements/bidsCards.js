@@ -1,4 +1,4 @@
-import { changeTimeFormat } from '../../tools/time/changeTime';
+import { changeTimeFormat } from '../../tools/time/changeTime.js';
 
 export const bidCard = (data) => {
   let { amount, listing } = data;
