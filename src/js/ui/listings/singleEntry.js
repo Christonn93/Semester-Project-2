@@ -12,6 +12,9 @@ import { itemBids } from '../ui-elements/bids.js';
 const storageToken = localStorage.getItem('Token');
 const urlParams = new URL(location.href);
 const id = urlParams.searchParams.get('id');
+const urlTitle = urlParams.searchParams.get('title');
+
+document.querySelector('title').innerText += ` || ` + urlTitle;
 
 /**
  *

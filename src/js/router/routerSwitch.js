@@ -29,7 +29,6 @@ export function routerSwitch() {
       // Page title
       func.displaySingleEntryData();
       func.addBidListener();
-      document.querySelector('title').innerText = defaultTitle + ` || `;
       break;
 
     // New entry UI settings
