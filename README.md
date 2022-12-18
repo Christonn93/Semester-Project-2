@@ -244,7 +244,7 @@ This project is licensed under a Creative Commons license. It is open for contri
     <tr>
       <th>Hosted Demo</th>
       <td>
-        <a href="https://auction-garage.christopher-tonnesland.no/pages/user/dashboard/index.html">Website</a>
+        <a href="https://auction-garage.christopher-tonnesland.no" target="_blank">Website</a>
       </td>
     </tr>
   </tbody>
