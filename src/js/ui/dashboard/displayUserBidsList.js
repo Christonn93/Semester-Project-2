@@ -12,11 +12,6 @@ export async function displayUserBids() {
   const data = await profileBidsFetch();
 
   // Checking if there is items. If it is remove the HTML element
-  if (data) {
-    document.getElementById('empty-bids').classList.add('d-none');
-    document.getElementById('empty-bidsEnded').classList.add('d-none');
-  }
-
   window.bids = data;
 
   function renderBids(data) {
@@ -28,10 +23,12 @@ export async function displayUserBids() {
 
       if (itemDate <= todayDate) {
         parentElementEnded.innerHTML += bids;
+        document.getElementById('empty-bidsEnded').classList.add('d-none');
       }
 
       if (itemDate >= todayDate) {
         parentElement.innerHTML += bids;
+        document.getElementById('empty-bids').classList.add('d-none');
       }
     });
   }

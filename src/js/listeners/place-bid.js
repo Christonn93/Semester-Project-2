@@ -15,7 +15,9 @@ export const addBidListener = () => {
       const amountValue = data.get('amount');
 
       await placeBidOnEntry(storageToken, id, Number(amountValue));
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     });
   }
 };

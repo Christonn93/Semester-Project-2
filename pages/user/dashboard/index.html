@@ -124,7 +124,7 @@
                       <p class="text-theme-beige mt-1">
                         <i><small class="text-theme-beige">*Not required</small></i>
                       </p>
-                      <div id="errorContainer-register" class="p-2"></div>
+                      <div id="register-feedback" class="p-2"></div>
                     </div>
                   </form>
                 </div>
@@ -219,14 +219,14 @@
                   <div class="container d-flex gap-3 flex-column">
                     <h2>Active bids</h2>
                     <div class="row gap-3 justify-content-center" id="placedBids">
-                      <p id="empty-bids">You have no bids to list here</p>
+                      <p id="empty-bids" class="text-center container bg-danger p-2">You have no bids to list here</p>
                     </div>
                   </div>
 
                   <div class="container d-flex gap-3 flex-column">
                     <h2>Ended bids</h2>
                     <div class="row gap-3 justify-content-center" id="placedBidsEnded">
-                      <p id="empty-bidsEnded">You have no items to list here</p>
+                      <p id="empty-bidsEnded" class="text-center container bg-danger p-2">You have no items to list here</p>
                     </div>
                   </div>
                 </div>
@@ -234,18 +234,18 @@
 
               <!-- Listings -->
               <div class="tab-pane fade" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
-                <div class="d-flex flex-column gap-4">
+                <div class="d-flex flex-column gap-4 mb-3">
                   <div class="container d-flex gap-3 flex-column">
                     <h2>Active listings</h2>
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="listingItems">
-                      <p id="empty-listing">You have no items to list here</p>
+                      <p id="empty-listing" class="text-center bg-danger p-2">You have no items to list here</p>
                     </div>
                   </div>
 
                   <div class="container d-flex gap-3 flex-column">
                     <h2>Ended listings</h2>
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 gy-5 gx-3 justify-content-center" id="listingItemsEnded">
-                      <p id="empty-listingEnded">You have no items to list here</p>
+                      <p id="empty-listingEnded" class="text-center bg-danger p-2">You have no items to list here</p>
                     </div>
                   </div>
                 </div>

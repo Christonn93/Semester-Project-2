@@ -47,15 +47,11 @@ export async function displayUserListingsUi() {
     // Checking date and appending items in the right containers
     if (itemDate <= todayDate) {
       listingItemsEnded.innerHTML += items;
+      document.getElementById('empty-listingEnded').classList.add('d-none');
     } else {
       listingItemsList.innerHTML += items;
       listingItemsList.classList.remove('justify-content-center');
-    }
-
-    // Checking if there is items. If it is remove the HTML element
-    if (items) {
       document.getElementById('empty-listing').classList.add('d-none');
-      document.getElementById('empty-listingEnded').classList.add('d-none');
     }
   });
 }
