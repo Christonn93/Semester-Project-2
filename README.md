@@ -186,13 +186,20 @@ After choosing one of the options above you will need to do the following
 
 ## Hosting
 
-This project is using GitHub action to display the page on a [subdomain](https://auction-garage.christopher-tonnesland.no/). It will automatically push update the live site on push to main.
+This project is using GitHub action to automatically display the page on a subdomain from my domain. It will also automatically push update the live site on push to main.
+
+[Live website](https://auction-garage.christopher-tonnesland.no/)
 
 ------
 
 ## Contributing
 
 If you experience any errors feel free to add issues or open up a pull request with suggested changes. Likewise, if there are features you would like to suggest feel free.
+
+### Known issues
+
+  1. Bids on the dashboard page should update the amount and not add new card each time the user make a bid.
+  2. Error is coming in console when opening modal inside canvas navigation. That is a bootstrap error. 
 
 ------
 
