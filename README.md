@@ -199,7 +199,8 @@ If you experience any errors feel free to add issues or open up a pull request w
 ### Known issues
 
   1. Bids on the dashboard page should update the amount and not add new card each time the user make a bid.
-  2. Error is coming in console when opening modal inside canvas navigation. That is a bootstrap error. 
+  2. Error is coming in console when opening modal inside canvas navigation. That is a bootstrap error.
+  3. When searching, if there is no items showing it should show feedback to the user. I manage to create some feedback but when clearing out the search fields the listings don't show back up
 
 ------
 
